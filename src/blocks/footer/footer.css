@@ -1,0 +1,12 @@
+@import url('./__copyright/footer__copyright.css');
+@import url('./__resources/footer__resources.css');
+@import url('./__links/footer__links.css');
+@import url('./__link/footer__link.css');
+@import url('./__social-icon/footer__social-icon.css');
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+}

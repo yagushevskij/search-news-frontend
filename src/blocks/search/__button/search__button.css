@@ -1,0 +1,17 @@
+.search__button {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translate(0, -50%);
+  height: 100%;
+  padding: 0 54px;
+  background: #2F71E5;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  border-radius: inherit;
+  border: 0;
+  color: #ffffff;
+}
+
+.search__button:active {
+  background: #2A65CC;
+}

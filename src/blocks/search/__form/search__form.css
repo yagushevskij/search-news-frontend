@@ -1,0 +1,7 @@
+.search__form {
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  border-radius: 100px;
+  margin-top: 60px;
+}

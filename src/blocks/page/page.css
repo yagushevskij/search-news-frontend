@@ -1,0 +1,11 @@
+@import url('./__fields/page__fields.css');
+@import url('./__title/page__title.css');
+@import url('./__text/page__text.css');
+
+.page {
+  margin: auto;
+  font-family: 'Inter', 'Roboto', 'Robotoslab', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 1440px;
+}

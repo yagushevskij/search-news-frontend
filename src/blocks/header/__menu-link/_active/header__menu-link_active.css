@@ -1,0 +1,4 @@
+.header__menu-link_active {
+  border-bottom: 3px solid;
+  padding-bottom: 27px;
+}
