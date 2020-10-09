@@ -1,0 +1,13 @@
+.card__icon_type_save {
+  background-image: url('../../../../images/icon-save-news.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__icon_type_save:hover ~ .card__icon_type_message {
+  display: flex;
+}
+
+.card__icon_type_save:hover {
+  background-image:url('../../../../images/icon-hover-news.svg');
+}

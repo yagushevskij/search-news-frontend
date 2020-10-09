@@ -1,0 +1,7 @@
+.card__info-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 24px;
+  height: 100%;
+}

@@ -10,34 +10,60 @@
 </head>
 
 <body class="page">
-  <div class="head-wrapper">
+  <div class="head-wrapper head-wrapper_theme_black">
+
     <header class="header page__fields">
-      <a class="header__logo" href="/">NewsExplorer</a>
+      <a class="header__logo page__link" href="/">NewsExplorer</a>
       <ul class="header__menu">
         <li>
-          <a class="header__menu-link header__menu-link_active" href="/">Главная</a>
+          <a class="header__menu-link header__menu-link_theme_black header__menu-link_active page__link" href="/">Главная</a>
         </li>
         <li>
-          <a class="header__menu-link header__menu-link_type_button" href="/">Авторизоваться</a>
+          <button class="button header__menu-link_type_button header__menu-link header__menu-link_theme_black page__link">Авторизоваться</button>
         </li>
       </ul>
     </header>
+
+    <!-- <header class="header page__fields">
+      <a class="header__logo page__link" href="/">NewsExplorer</a>
+      <ul class="header__menu">
+        <li>
+          <a class="header__menu-link header__menu-link_theme_black header__menu-link_active page__link" href="/">Главная</a>
+        <li>
+          <a class="header__menu-link header__menu-link_theme_black page__link" href="/">Сохраненные статьи</a>
+        </li>
+        </li>
+        <li>
+          <button class="button header__menu-link_type_button header__menu-link header__menu-link_theme_black page__link" href="/">Грета
+            <i class="header__logout-icon header__logout-icon_theme_black"></i>
+          </button>
+        </li>
+      </ul>
+    </header> -->
+
     <div class="search">
       <div class="search__column-wrapper">
         <h1 class="search__title">Что творится в мире?</h1>
-        <p class="page-text">
+        <p class="search__description page__text">
           Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
         </p>
         <form class="search__form" name="search">
           <input type="text" name="query" class="search__input" placeholder="Введите тему новости" minlength="2"
             maxlength="30">
-          <button type="submit" class="button search__button">Искать</button>
+          <button type="submit" class="button button_active search__button">Искать</button>
         </form>
       </div>
     </div>
   </div>
 
-  <article class="about page__fields">
+  <section class="search-results page__fields">
+    <div class="search-results__search">
+      <i class="circle-preloader"></i>
+      <p class="search-results__description">Идет поиск новостей...</p>
+    </div>
+  </section>
+
+  <section class="about page__fields">
     <picture>
       <source srcset="<%=require('./images/avatar-mobile.jpg')%>" media="(max-width: 320px)">
       <source srcset="<%=require('./images/avatar-tablet.jpg')%>" media="(max-width: 768px)">
@@ -56,23 +82,99 @@
         потенциальным заказчикам.
       </p>
     </div>
-  </article>
+  </section>
+
+  <section class="search-results page__fields">
+    <h1 class="page__title">Результаты поиска</h1>
+    <div class="cards-container">
+      <article class="card">
+        <div class="card__image-container">
+          <img src="<%=require('./images/image_08.jpg')%>" class="card__image" alt="Кусты с сиреневыми листьями">
+          <div class="card__icons-container">
+            <button class="card__icon card__icon_type_save"></button>
+            <div class="card__icon card__icon_type_message">Войдите, чтобы сохранять статьи</div>
+          </div>
+        </div>
+        <div class="card__info-container">
+          <p class="card__date">2 августа, 2019</p>
+          <h2 class="card__title">Национальное достояние – парки</h2>
+          <p class="card__description">
+            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
+            парков – охраняемых территорий,
+            где и сегодня каждый может приобщиться к природе.
+          </p>
+          <a href="https://lenta.ru/" class="card__link">лента.ру</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__image-container">
+          <img src="<%=require('./images/image_04.jpg')%>" class="card__image" alt="Комнатное растение">
+          <div class="card__icons-container">
+            <button class="card__icon card__icon_type_saved"></button>
+            <div class="card__icon card__icon_type_message">Нажмите, чтобы удалить из коллекции</div>
+          </div>
+        </div>
+        <div class="card__info-container">
+          <p class="card__date">2 августа, 2019</p>
+          <h2 class="card__title">Лесные огоньки: история одной фотографии</h2>
+          <p class="card__description">
+            Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую
+            красоту одного из местных чудес природы.
+          </p>
+          <a href="https://meduza.io/" class="card__link">медуза</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__image-container">
+          <img src="<%=require('./images/image_07.jpg')%>" class="card__image" alt="Вьющийся куст">
+          <div class="card__icons-container">
+            <div class="card__icons-container">
+              <button class="card__icon card__icon_type_save"></button>
+              <div class="card__icon card__icon_type_message">Войдите, чтобы сохранять статьи</div>
+            </div>
+          </div>
+        </div>
+        <div class="card__info-container">
+          <p class="card__date">2 августа, 2019</p>
+          <h2 class="card__title">&laquo;Первозданная тайга&raquo;: новый фотопроект Игоря Шпиленка</h2>
+          <p class="card__description">
+            Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения.
+            Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения.
+            Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения.
+          </p>
+          <a href="https://ria.ru/" class="card__link">риа</a>
+        </div>
+      </article>
+    </div>
+    <button class="button button_type_load-more">Показать еще</button>
+  </section>
+
+  <section class="search-results page__fields">
+    <div class="search-results__search">
+      <i class="search-results__not-found-icon"></i>
+      <h1 class="search-results__title">Ничего не найдено</h1>
+      <p class="search-results__description">
+        К сожалению по вашему запросу ничего не найдено.
+      </p>
+    </div>
+  </section>
+
   <footer class="footer page__fields">
     <div class="footer__copyright">
       &#169; 2020 Supersite, Powered by News API
     </div>
     <div class="footer__resources">
       <ul class="footer__links">
-        <li><a class="footer__link page__text" href="/">Главная</a></li>
-        <li><a class="footer__link page__text" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+        <li><a class="footer__link page__text page__link" href="/">Главная</a></li>
+        <li><a class="footer__link page__text page__link" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
       </ul>
       <ul class="footer__links">
         <li>
-          <a href="https://github.com/yagushevskij" class="footer__social-icon"><img
+          <a href="https://github.com/yagushevskij" class="footer__social-icon page__link"><img
               src="<%=require('./images/icon-github.svg')%>"></a>
         </li>
         <li>
-          <a href="https://www.facebook.com/yagushevskij" class="footer__social-icon"><img
+          <a href="https://www.facebook.com/yagushevskij" class="footer__social-icon page__link"><img
               src="<%=require('./images/icon-facebook.svg')%>"></a>
         </li>
       </ul>
@@ -80,22 +182,67 @@
   </footer>
 
   <!-- <template id="login-popup"> -->
-  <div class="popup popup_is-opened">
-    <div class="popup__content">
+  <div class="popup">
+    <div class="popup__content popup__content_type_form">
       <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
-      <h2 class="popup__title">Редактировать профиль</h2>
+      <h2 class="popup__title">Вход</h2>
       <form class="popup__form" name="login">
-        <label>Email
-          <input type="text" name="email" class="popup__input" placeholder="введите почту" required>
+        <label>
+          <div class="popup__field-title">Email
+            <input type="text" name="email" class="popup__input" placeholder="Введите почту" required>
+          </div>
         </label>
-        <span class="error-message"></span>
-        <label>Пароль
-          <input type="text" name="about" class="popup__input" placeholder="Введите пароль" required>
+        <span class="error-message popup__frontend-error-message">Неправильный формат email</span>
+        <label>
+          <div class="popup__field-title">Пароль
+            <input type="password" name="about" class="popup__input" placeholder="Введите пароль" required>
+          </div>
         </label>
-        <span class="error-message"></span>
-        <button type="submit" class="button popup__button popup__button_function_save">Войти</button>
+        <span class="error-message popup__frontend-error-message"></span>
+        <button type="submit" class="button button_inactive popup__button">Войти</button>
       </form>
-      <p class="popup__anymore">или <span><a href="/">Зарегистрироваться</a></span></p>
+      <div class="popup__alt-container">или <a class="popup__alt-link page__link" href="/">Зарегистрироваться</a></div>
+    </div>
+  </div>
+  <!-- </template> -->
+
+  <!-- <template id="registration-popup"> -->
+  <div class="popup">
+    <div class="popup__content popup__content_type_form">
+      <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+      <h2 class="popup__title">Регистрация</h2>
+      <form class="popup__form" name="login">
+        <label>
+          <div class="popup__field-title">Email
+            <input type="text" name="email" class="popup__input" placeholder="Введите почту" required>
+          </div>
+        </label>
+        <span class="error-message popup__frontend-error-message"></span>
+        <label>
+          <div class="popup__field-title">Пароль
+            <input type="password" name="about" class="popup__input" placeholder="Введите пароль" required>
+          </div>
+        </label>
+        <span class="error-message popup__frontend-error-message"></span>
+        <label>
+          <div class="popup__field-title">Имя
+            <input type="text" name="name" class="popup__input" placeholder="Введите своё имя" required>
+          </div>
+        </label>
+        <span class="error-message popup__backend-error-message">Такой пользователь уже есть</span>
+        <button type="submit" class="button button_active popup__button">Зарегистрироваться</button>
+      </form>
+      <div class="popup__alt-container">или <a class="popup__alt-link page__link" href="/">Войти</a></div>
+    </div>
+  </div>
+  <!-- </template> -->
+
+  <!-- <template id="reg-success-popup"> -->
+  <div class="popup">
+    <div class="popup__content popup__content_type_info">
+      <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+      <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
+      <a class="popup__alt-link popup__alt-link_type_login page__link" href="/">Войти</a>
     </div>
   </div>
   <!-- </template> -->

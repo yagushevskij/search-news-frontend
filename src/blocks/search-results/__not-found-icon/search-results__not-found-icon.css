@@ -1,0 +1,6 @@
+.search-results__not-found-icon {
+  background-image: url('../../../images/icon-not-found.svg');
+  width: 96px;
+  height: 96px;
+  margin-top: 6px;
+}

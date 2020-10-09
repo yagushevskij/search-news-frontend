@@ -45,3 +45,11 @@
   font-display: swap;
   src: url("./fonts/robotoslab-medium.woff") format("woff");
 }
+
+@font-face {
+  font-family: 'Sanspro';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/sourcesanspro-regular.woff") format("woff");
+}

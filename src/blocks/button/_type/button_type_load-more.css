@@ -1,0 +1,11 @@
+.button_type_load-more {
+  align-self: center;
+  background-color: #ffffff;
+  min-width: 288px;
+  min-height: 64px;
+  border: 0;
+}
+
+.button_type_load-more:hover {
+  background-color: #e8e8e9;
+}

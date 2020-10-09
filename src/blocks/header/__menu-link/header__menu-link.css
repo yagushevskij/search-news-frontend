@@ -1,13 +1,18 @@
 @import url('./_type/header__menu-link_type_button.css');
 @import url('./_active/header__menu-link_active.css');
 
+@import url(./_theme/header__menu-link_theme_white.css);
+@import url('./_theme/header__menu-link_theme_black.css');
+@import url('./_active/header__menu-link_active.css');
+@import url('./_type/header__menu-link_type_button.css');
+@import url('./_type/header__menu-link_type_logged-in.css');
+
 .header__menu-link {
-  font-family: 'Roboto';
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   text-decoration: none;
-  color: inherit;
   margin: 0 0 0 32px;
 }

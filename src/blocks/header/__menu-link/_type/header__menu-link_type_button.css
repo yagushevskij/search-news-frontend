@@ -1,5 +1,10 @@
-.header__menu-link_type_button {
-  border: 1px solid #ffffff;
+.header__menu-link.header__menu-link_type_button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  border-color: inherit;
   border-radius: 100px;
-  padding: 9px;
+  padding: 9px 12px;
+  color: inherit;
 }

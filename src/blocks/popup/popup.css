@@ -4,6 +4,12 @@
 @import url(./__form/popup__form.css);
 @import url(./__input/popup__input.css);
 @import url(./_is-opened/popup_is-opened.css);
+@import url('./__field-title/popup__field-title.css');
+@import url('./__button/popup__button.css');
+@import url('./__alt-container/popup__alt-container.css');
+@import url('./__alt-link/popup__alt-link.css');
+@import url('./__backend-error-message/popup__backend-error-message.css');
+@import url('./__frontend-error-message/popup__frontend-error-message.css');
 
 .popup {
   position: fixed;

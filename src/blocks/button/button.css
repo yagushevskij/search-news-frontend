@@ -1,6 +1,11 @@
+@import url('./_active/button_active.css');
+@import url('./_inactive/button_inactive.css');
+@import url('./_type/button_type_load-more.css');
+
 .button {
-  font-style: 'Roboto';
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
+  border-radius: 100px;
 }

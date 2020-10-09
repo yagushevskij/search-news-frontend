@@ -1,7 +1,5 @@
+@import url('./_theme/head-wrapper_theme_white.css');
+@import url('./_theme/head-wrapper_theme_black.css');
+
 .head-wrapper {
-  background-image: url(../../images/head-wrapper-full.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #FFFFFF;
-  width: 100%;
 }
