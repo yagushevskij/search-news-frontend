@@ -1,4 +1,5 @@
 @import url('./_theme/header__logout-icon_theme_black.css');
+@import url('./_theme/header__logout-icon_theme_white.css');
 
 .header__logout-icon {
   width: 24px;

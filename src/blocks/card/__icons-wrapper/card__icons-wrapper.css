@@ -1,0 +1,4 @@
+.card__icons-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}

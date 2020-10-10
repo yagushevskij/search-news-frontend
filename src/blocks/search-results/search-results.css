@@ -1,6 +1,6 @@
 @import url('./__search/search-results__search.css');
 @import url('./__title/search-results__title.css');
-@import url(./__description/search-results__description.css);
+@import url('./__description/search-results__description.css');
 @import url('./__not-found-icon/search-results__not-found-icon.css');
 
 .search-results {

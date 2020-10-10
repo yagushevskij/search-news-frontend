@@ -1,6 +1,8 @@
 @import url('./_type/card__icon_type_save.css');
 @import url('./_type/card__icon_type_saved.css');
 @import url('./_type/card__icon_type_message.css');
+@import url('./_type/card__icon_type_delete.css');
+@import url('./_type/card__icon_type_tag.css');
 
 .card__icon {
   align-items: center;

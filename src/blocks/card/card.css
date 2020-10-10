@@ -2,6 +2,7 @@
 @import url(./__image/card__image.css);
 @import url(./__icons-container/card__icons-container.css);
 @import url(./__icon/card__icon.css);
+@import url('./__icons-wrapper/card__icons-wrapper.css');
 @import url(./__info-container/card__info-container.css);
 @import url('./__date/card__date.css');
 @import url('./__title/card__title.css');

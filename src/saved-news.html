@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News Explorer</title>
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
+  <link rel="shortcut icon" href="<%=require('./images/favicon.svg')%>" type="image/x-icon" />
+</head>
+
+<body class="page">
+  <div class="head-wrapper head-wrapper_theme_white">
+
+    <header class="header page__fields">
+      <a class="header__logo page__link" href="/">NewsExplorer</a>
+      <ul class="header__menu">
+        <li>
+          <a class="header__menu-link header__menu-link_theme_white page__link" href="/">Главная</a>
+        </li>
+        <li>
+          <a class="header__menu-link header__menu-link_theme_white header__menu-link_active page__link"
+            href="/">Сохраненные статьи</a>
+        </li>
+        <li>
+          <button
+            class="button header__menu-link_type_button header__menu-link header__menu-link_theme_white page__link"
+            href="/">Грета
+            <i class="header__logout-icon header__logout-icon_theme_white"></i>
+          </button>
+        </li>
+      </ul>
+    </header>
+  </div>
+
+  <section class="saved-news">
+    <div class="saved-news__info-block page__fields">
+      <p class="saved-news__description page__text-description">Сохраненные статьи</p>
+      <h1 class="saved-news__title page__title">Грета, у вас 5 сохранённых статей</h1>
+      <p class="saved-news__keywords">По ключевым словам: <span class="saved-news__span-accent">Природа, Тайга</span> и <span class="saved-news__span-accent">2-м другим</span></p>
+    </div>
+    <div class="cards-container saved-news__cards page__fields">
+      <article class="card">
+        <div class="card__image-container">
+          <img src="<%=require('./images/image_06.jpg')%>" class="card__image" alt="Комнатное растение">
+          <div class="card__icons-container">
+            <div class="card__icons-wrapper">
+              <button class="card__icon card__icon_type_delete"></button>
+              <div class="card__icon card__icon_type_message">Убрать из сохраненных</div>
+            </div>
+            <div class="card__icon card__icon_type_tag">Природа</div>
+          </div>
+        </div>
+        <div class="card__info-container">
+          <p class="card__date">2 августа, 2019</p>
+          <h2 class="card__title">Национальное достояние – парки</h2>
+          <p class="card__description">
+            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
+            парков – охраняемых территорий,
+            где и сегодня каждый может приобщиться к природе.
+          </p>
+          <a href="https://zen.yandex.ru/" class="card__link">дзен</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__image-container">
+          <img src="<%=require('./images/image_01.jpg')%>" class="card__image" alt="Ландшафт">
+          <div class="card__icons-container">
+            <div class="card__icons-wrapper">
+              <button class="card__icon card__icon_type_delete"></button>
+              <div class="card__icon card__icon_type_message">Убрать из сохраненных</div>
+            </div>
+            <div class="card__icon card__icon_type_tag">Природа</div>
+          </div>
+        </div>
+        <div class="card__info-container">
+          <p class="card__date">2 августа, 2019</p>
+          <h2 class="card__title">Национальное достояние – парки</h2>
+          <p class="card__description">
+            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
+            парков – охраняемых территорий,
+            где и сегодня каждый может приобщиться к природе.
+          </p>
+          <a href="https://www.afisha.ru/" class="card__link">афиша</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__image-container">
+          <img src="<%=require('./images/image_05.jpg')%>" class="card__image" alt="Лист в вазе">
+          <div class="card__icons-container">
+            <div class="card__icons-wrapper">
+              <button class="card__icon card__icon_type_delete"></button>
+              <div class="card__icon card__icon_type_message">Убрать из сохраненных</div>
+            </div>
+            <div class="card__icon card__icon_type_tag">Природа</div>
+          </div>
+        </div>
+        <div class="card__info-container">
+          <p class="card__date">2 августа, 2019</p>
+          <h2 class="card__title">Национальное достояние – парки</h2>
+          <p class="card__description">
+            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
+            парков – охраняемых территорий,
+            где и сегодня каждый может приобщиться к природе.
+          </p>
+          <a href="https://zona.media/" class="card__link">медиазона</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__image-container">
+          <img src="<%=require('./images/image_06.jpg')%>" class="card__image" alt="Комнатное растение">
+          <div class="card__icons-container">
+            <div class="card__icons-wrapper">
+              <button class="card__icon card__icon_type_delete"></button>
+              <div class="card__icon card__icon_type_message">Убрать из сохраненных</div>
+            </div>
+            <div class="card__icon card__icon_type_tag">Природа</div>
+          </div>
+        </div>
+        <div class="card__info-container">
+          <p class="card__date">2 августа, 2019</p>
+          <h2 class="card__title">Национальное достояние – парки</h2>
+          <p class="card__description">
+            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
+            парков – охраняемых территорий,
+            где и сегодня каждый может приобщиться к природе.
+          </p>
+          <a href="https://lenta.ru/" class="card__link">лента.ру</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__image-container">
+          <img src="<%=require('./images/image_01.jpg')%>" class="card__image" alt="Ландшафт">
+          <div class="card__icons-container">
+            <div class="card__icons-wrapper">
+              <button class="card__icon card__icon_type_delete"></button>
+              <div class="card__icon card__icon_type_message">Убрать из сохраненных</div>
+            </div>
+            <div class="card__icon card__icon_type_tag">Природа</div>
+          </div>
+        </div>
+        <div class="card__info-container">
+          <p class="card__date">2 августа, 2019</p>
+          <h2 class="card__title">Национальное достояние – парки</h2>
+          <p class="card__description">
+            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
+            парков – охраняемых территорий,
+            где и сегодня каждый может приобщиться к природе.
+          </p>
+          <a href="https://lenta.ru/" class="card__link">лента.ру</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer page__fields">
+    <div class="footer__copyright">
+      &#169; 2020 Supersite, Powered by News API
+    </div>
+    <div class="footer__resources">
+      <ul class="footer__links">
+        <li><a class="footer__link page__text page__link" href="/">Главная</a></li>
+        <li><a class="footer__link page__text page__link" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+      </ul>
+      <ul class="footer__links">
+        <li>
+          <a href="https://github.com/yagushevskij" class="footer__social-icon page__link"><img
+              src="<%=require('./images/icon-github.svg')%>"></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/yagushevskij" class="footer__social-icon page__link"><img
+              src="<%=require('./images/icon-facebook.svg')%>"></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
+</body>
+
+</html>

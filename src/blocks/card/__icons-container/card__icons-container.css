@@ -1,5 +1,6 @@
 .card__icons-container {
   display: flex;
+  justify-content: space-between;
   flex-direction: row-reverse;
   width: 100%;
   position: absolute;

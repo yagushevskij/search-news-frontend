@@ -1,0 +1,9 @@
+@import url('./__info-block/saved-news__info-block.css');
+@import url('./__title/saved-news__title.css');
+@import url('./__description/saved-news__description.css');
+@import url('./__keywords/saved-news__keywords.css');
+@import url('./__cards/saved-news__cards.css');
+@import url('./__span-accent/saved-news__span-accent.css');
+
+.saved-news {
+}

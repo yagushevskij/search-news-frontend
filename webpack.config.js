@@ -10,11 +10,12 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
-    main: './src/scripts/main.js',
+    index: './src/scripts/index.js',
+    savednews: './src/scripts/saved-news/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
+    filename: './scripts/[name].[chunkhash].js',
   },
   module: {
     rules: [{
@@ -70,7 +71,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: './styles/[name].[contenthash].css',
     }),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
@@ -87,6 +88,13 @@ module.exports = {
       inject: false,
       template: './src/index.html',
       filename: 'index.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/saved-news.html',
+      filename: 'saved-news.html',
+      chunks: ['savednews'],
     }),
     new WebpackMd5Hash(),
   ],

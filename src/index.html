@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>News Explorer</title>
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
+  <link rel="shortcut icon" href="<%=require('./images/favicon.svg')%>" type="image/x-icon" />
 </head>
 
 <body class="page">
@@ -59,7 +60,7 @@
   <section class="search-results page__fields">
     <div class="search-results__search">
       <i class="circle-preloader"></i>
-      <p class="search-results__description">Идет поиск новостей...</p>
+      <p class="search-results__description page__text-description">Идет поиск новостей...</p>
     </div>
   </section>
 
@@ -153,7 +154,7 @@
     <div class="search-results__search">
       <i class="search-results__not-found-icon"></i>
       <h1 class="search-results__title">Ничего не найдено</h1>
-      <p class="search-results__description">
+      <p class="search-results__description page__text-description">
         К сожалению по вашему запросу ничего не найдено.
       </p>
     </div>
