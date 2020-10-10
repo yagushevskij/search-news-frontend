@@ -12,4 +12,6 @@
   background-color: #FFFFFF;
   border-radius: 8px;
   border: 0;
+  z-index: 2;
+  cursor: pointer;
 }

@@ -13,7 +13,7 @@
 <body class="page">
   <div class="head-wrapper head-wrapper_theme_black">
 
-    <header class="header page__fields">
+    <!-- <header class="header page__fields">
       <a class="header__logo page__link" href="/">NewsExplorer</a>
       <ul class="header__menu">
         <li>
@@ -23,24 +23,27 @@
           <button class="button header__menu-link_type_button header__menu-link header__menu-link_theme_black page__link">Авторизоваться</button>
         </li>
       </ul>
-    </header>
+    </header> -->
 
-    <!-- <header class="header page__fields">
+    <header class="header page__fields">
       <a class="header__logo page__link" href="/">NewsExplorer</a>
       <ul class="header__menu">
         <li>
-          <a class="header__menu-link header__menu-link_theme_black header__menu-link_active page__link" href="/">Главная</a>
+          <a class="header__menu-link header__menu-link_theme_black header__menu-link_active page__link"
+            href="/">Главная</a>
         <li>
-          <a class="header__menu-link header__menu-link_theme_black page__link" href="/">Сохраненные статьи</a>
+          <a class="header__menu-link header__menu-link_theme_black page__link" href="/saved-news.html">Сохраненные
+            статьи</a>
         </li>
         </li>
         <li>
-          <button class="button header__menu-link_type_button header__menu-link header__menu-link_theme_black page__link" href="/">Грета
+          <button
+            class="button header__menu-link_type_button header__menu-link header__menu-link_theme_black page__link">Грета
             <i class="header__logout-icon header__logout-icon_theme_black"></i>
           </button>
         </li>
       </ul>
-    </header> -->
+    </header>
 
     <div class="search">
       <div class="search__column-wrapper">
@@ -89,11 +92,14 @@
     <h1 class="page__title">Результаты поиска</h1>
     <div class="cards-container">
       <article class="card">
+        <a href="https://lenta.ru/" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
           <img src="<%=require('./images/image_08.jpg')%>" class="card__image" alt="Кусты с сиреневыми листьями">
           <div class="card__icons-container">
-            <button class="card__icon card__icon_type_save"></button>
-            <div class="card__icon card__icon_type_message">Войдите, чтобы сохранять статьи</div>
+            <div class="card__icons-wrapper">
+              <button class="card__icon card__icon_type_save"></button>
+              <div class="card__icon card__icon_type_message">Войдите, чтобы сохранять статьи</div>
+            </div>
           </div>
         </div>
         <div class="card__info-container">
@@ -104,15 +110,20 @@
             парков – охраняемых территорий,
             где и сегодня каждый может приобщиться к природе.
           </p>
-          <a href="https://lenta.ru/" class="card__link">лента.ру</a>
+          <a href="https://lenta.ru/" class="card__source-link" target="_blank">лента.ру</a>
         </div>
       </article>
       <article class="card">
+        <a href="https://meduza.io" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
           <img src="<%=require('./images/image_04.jpg')%>" class="card__image" alt="Комнатное растение">
           <div class="card__icons-container">
-            <button class="card__icon card__icon_type_saved"></button>
-            <div class="card__icon card__icon_type_message">Нажмите, чтобы удалить из коллекции</div>
+            <div class="card__icons-wrapper">
+              <div class="card__icons-wrapper">
+                <button class="card__icon card__icon_type_saved"></button>
+                <div class="card__icon card__icon_type_message">Нажмите, чтобы удалить из коллекции</div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card__info-container">
@@ -122,10 +133,11 @@
             Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую
             красоту одного из местных чудес природы.
           </p>
-          <a href="https://meduza.io/" class="card__link">медуза</a>
+          <a href="https://meduza.io/" class="card__source-link" target="_blank">медуза</a>
         </div>
       </article>
       <article class="card">
+        <a href="https://ria.ru" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
           <img src="<%=require('./images/image_07.jpg')%>" class="card__image" alt="Вьющийся куст">
           <div class="card__icons-container">
@@ -143,7 +155,7 @@
             Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения.
             Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения.
           </p>
-          <a href="https://ria.ru/" class="card__link">риа</a>
+          <a href="https://ria.ru/" class="card__source-link" target="_blank">риа</a>
         </div>
       </article>
     </div>
@@ -167,15 +179,16 @@
     <div class="footer__resources">
       <ul class="footer__links">
         <li><a class="footer__link page__text page__link" href="/">Главная</a></li>
-        <li><a class="footer__link page__text page__link" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+        <li><a class="footer__link page__text page__link" href="https://praktikum.yandex.ru/"
+            target="_blank">Яндекс.Практикум</a></li>
       </ul>
       <ul class="footer__links">
         <li>
-          <a href="https://github.com/yagushevskij" class="footer__social-icon page__link"><img
+          <a href="https://github.com/yagushevskij" class="footer__social-icon page__link" target="_blank"><img
               src="<%=require('./images/icon-github.svg')%>"></a>
         </li>
         <li>
-          <a href="https://www.facebook.com/yagushevskij" class="footer__social-icon page__link"><img
+          <a href="https://www.facebook.com/yagushevskij" class="footer__social-icon page__link" target="_blank"><img
               src="<%=require('./images/icon-facebook.svg')%>"></a>
         </li>
       </ul>

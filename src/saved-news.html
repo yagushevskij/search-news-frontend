@@ -25,8 +25,7 @@
         </li>
         <li>
           <button
-            class="button header__menu-link_type_button header__menu-link header__menu-link_theme_white page__link"
-            href="/">Грета
+            class="button header__menu-link_type_button header__menu-link header__menu-link_theme_white page__link">Грета
             <i class="header__logout-icon header__logout-icon_theme_white"></i>
           </button>
         </li>
@@ -38,10 +37,12 @@
     <div class="saved-news__info-block page__fields">
       <p class="saved-news__description page__text-description">Сохраненные статьи</p>
       <h1 class="saved-news__title page__title">Грета, у вас 5 сохранённых статей</h1>
-      <p class="saved-news__keywords">По ключевым словам: <span class="saved-news__span-accent">Природа, Тайга</span> и <span class="saved-news__span-accent">2-м другим</span></p>
+      <p class="saved-news__keywords">По ключевым словам: <span class="saved-news__span-accent">Природа, Тайга</span> и
+        <span class="saved-news__span-accent">2-м другим</span></p>
     </div>
     <div class="cards-container saved-news__cards page__fields">
       <article class="card">
+        <a href="https://zen.yandex.ru" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
           <img src="<%=require('./images/image_06.jpg')%>" class="card__image" alt="Комнатное растение">
           <div class="card__icons-container">
@@ -60,10 +61,11 @@
             парков – охраняемых территорий,
             где и сегодня каждый может приобщиться к природе.
           </p>
-          <a href="https://zen.yandex.ru/" class="card__link">дзен</a>
+          <a href="https://zen.yandex.ru/" class="card__source-link" target="_blank">дзен</a>
         </div>
       </article>
       <article class="card">
+        <a href="https://www.afisha.ru" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
           <img src="<%=require('./images/image_01.jpg')%>" class="card__image" alt="Ландшафт">
           <div class="card__icons-container">
@@ -82,10 +84,11 @@
             парков – охраняемых территорий,
             где и сегодня каждый может приобщиться к природе.
           </p>
-          <a href="https://www.afisha.ru/" class="card__link">афиша</a>
+          <a href="https://www.afisha.ru/" class="card__source-link" target="_blank">афиша</a>
         </div>
       </article>
       <article class="card">
+        <a href="https://zona.media" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
           <img src="<%=require('./images/image_05.jpg')%>" class="card__image" alt="Лист в вазе">
           <div class="card__icons-container">
@@ -104,10 +107,11 @@
             парков – охраняемых территорий,
             где и сегодня каждый может приобщиться к природе.
           </p>
-          <a href="https://zona.media/" class="card__link">медиазона</a>
+          <a href="https://zona.media/" class="card__source-link" target="_blank">медиазона</a>
         </div>
       </article>
       <article class="card">
+        <a href="https://lenta.ru" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
           <img src="<%=require('./images/image_06.jpg')%>" class="card__image" alt="Комнатное растение">
           <div class="card__icons-container">
@@ -126,10 +130,11 @@
             парков – охраняемых территорий,
             где и сегодня каждый может приобщиться к природе.
           </p>
-          <a href="https://lenta.ru/" class="card__link">лента.ру</a>
+          <a href="https://lenta.ru/" class="card__source-link" target="_blank">лента.ру</a>
         </div>
       </article>
       <article class="card">
+        <a href="https://lenta.ru" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
           <img src="<%=require('./images/image_01.jpg')%>" class="card__image" alt="Ландшафт">
           <div class="card__icons-container">
@@ -148,7 +153,7 @@
             парков – охраняемых территорий,
             где и сегодня каждый может приобщиться к природе.
           </p>
-          <a href="https://lenta.ru/" class="card__link">лента.ру</a>
+          <a href="https://lenta.ru/" class="card__source-link" target="_blank">лента.ру</a>
         </div>
       </article>
     </div>
@@ -161,15 +166,16 @@
     <div class="footer__resources">
       <ul class="footer__links">
         <li><a class="footer__link page__text page__link" href="/">Главная</a></li>
-        <li><a class="footer__link page__text page__link" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+        <li><a class="footer__link page__text page__link" href="https://praktikum.yandex.ru/"
+            target="_blank">Яндекс.Практикум</a></li>
       </ul>
       <ul class="footer__links">
         <li>
-          <a href="https://github.com/yagushevskij" class="footer__social-icon page__link"><img
+          <a href="https://github.com/yagushevskij" class="footer__social-icon page__link" target="_blank"><img
               src="<%=require('./images/icon-github.svg')%>"></a>
         </li>
         <li>
-          <a href="https://www.facebook.com/yagushevskij" class="footer__social-icon page__link"><img
+          <a href="https://www.facebook.com/yagushevskij" class="footer__social-icon page__link" target="_blank"><img
               src="<%=require('./images/icon-facebook.svg')%>"></a>
         </li>
       </ul>

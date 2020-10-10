@@ -7,10 +7,12 @@
 @import url('./__date/card__date.css');
 @import url('./__title/card__title.css');
 @import url('./__description/card__description.css');
-@import url('./__link/card__link.css');
+@import url('./__news-link/card__news-link.css');
+@import url('./__source-link/card__source-link.css');
 
 .card {
   display: flex;
+  position: relative;
   flex-direction: column;
   background-color: #FFFFFF;
   border-radius: 20px;
