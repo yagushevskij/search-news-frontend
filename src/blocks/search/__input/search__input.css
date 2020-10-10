@@ -16,3 +16,7 @@
 .search__input:active, :hover, :focus {
   outline: none;
 }
+
+.search__input:focus {
+  border: 1px solid skyblue;
+}
