@@ -9,3 +9,9 @@
   padding: 24px 24px 0 24px;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 1000px) {
+  .card__icons-container {
+    padding: 8px 8px 0 8px;
+  }
+}

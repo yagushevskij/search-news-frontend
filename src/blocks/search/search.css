@@ -11,3 +11,10 @@
   align-items: center;
   padding: 80px 0;
 }
+
+@media screen and (max-width: 1000px) {
+  .search {
+    padding: 38px 0 48px 0;
+  }
+}
+

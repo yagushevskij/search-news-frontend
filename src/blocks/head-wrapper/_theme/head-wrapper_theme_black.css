@@ -5,3 +5,9 @@
   color: #FFFFFF;
   width: 100%;
 }
+
+@media screen and (max-width: 1000px) {
+  .head-wrapper_theme_black {
+    background-image: url(../../../images/head-wrapper-tablet.jpg);
+  }
+}

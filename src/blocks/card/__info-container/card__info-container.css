@@ -4,4 +4,11 @@
   flex-direction: column;
   padding: 24px;
   height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__info-container {
+    padding: 16px;
+  }
 }

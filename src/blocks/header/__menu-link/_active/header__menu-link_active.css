@@ -3,3 +3,9 @@
   padding-bottom: 27px;
   color: inherit;
 }
+
+@media screen and (max-width: 1000px) {
+  .header__menu-link.header__menu-link_active {
+    padding-bottom: 22px;
+  }
+}

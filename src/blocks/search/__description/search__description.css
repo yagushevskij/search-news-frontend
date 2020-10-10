@@ -2,3 +2,9 @@
   color: inherit;
   margin-top: 27px;
 }
+
+@media screen and (max-width: 1000px) {
+  .search__description {
+    margin-top: 16px;
+  }
+}

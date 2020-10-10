@@ -5,3 +5,11 @@
   margin-left: 56px;
   max-width: 600px;
 }
+
+@media screen and (max-width: 1000px) {
+  .about__info {
+    padding-top: 0;
+    margin-left: 32px;
+    width: 100%;
+  }
+}

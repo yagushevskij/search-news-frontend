@@ -1,3 +1,9 @@
 .page__fields {
   padding: 0 104px;
 }
+
+@media screen and (max-width: 1000px) {
+  .page__fields {
+    padding: 0 40px;
+  }
+}

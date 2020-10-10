@@ -5,3 +5,9 @@
   border-radius: 100px;
   margin-top: 60px;
 }
+
+@media screen and (max-width: 1000px) {
+  .search__form {
+    margin-top: 48px;
+  }
+}

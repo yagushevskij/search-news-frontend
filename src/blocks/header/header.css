@@ -10,3 +10,9 @@
   min-height: 80px;
   align-items: center;
 }
+
+@media screen and (max-width: 1000px) {
+  .header {
+    min-height: 66px;
+  }
+}

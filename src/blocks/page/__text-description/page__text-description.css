@@ -4,3 +4,9 @@
   line-height: 24px;
   color: #B6BCBF;
 }
+
+@media screen and (max-width: 1000px) {
+  .page__text-description {
+    font-size: 14px;
+  }
+}

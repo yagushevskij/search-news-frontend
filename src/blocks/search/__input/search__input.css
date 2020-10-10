@@ -20,3 +20,9 @@
 .search__input:focus {
   border: 1px solid skyblue;
 }
+
+@media screen and (max-width: 1000px) {
+  .search__input {
+    padding: 20px;
+  }
+}

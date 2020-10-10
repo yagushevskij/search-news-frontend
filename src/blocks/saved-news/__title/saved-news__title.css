@@ -2,3 +2,10 @@
   max-width: 530px;
   margin-top: 30px
 }
+
+@media screen and (max-width: 1000px) {
+  .saved-news__title {
+    max-width: 336px;
+    margin-top: 16px;
+  }
+}
