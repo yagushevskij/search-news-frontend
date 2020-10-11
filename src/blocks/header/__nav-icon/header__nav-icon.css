@@ -1,0 +1,6 @@
+@import url('./_theme/header__nav-icon_theme_black.css');
+
+.header__nav-icon {
+  height: 24px;
+  width: 24px;
+}

@@ -11,9 +11,8 @@
 </head>
 
 <body class="page">
-  <div class="head-wrapper head-wrapper_theme_black">
 
-    <!-- <header class="header page__fields">
+  <!-- <header class="header page__fields">
       <a class="header__logo page__link" href="/">NewsExplorer</a>
       <ul class="header__menu">
         <li>
@@ -25,27 +24,28 @@
       </ul>
     </header> -->
 
-    <header class="header page__fields">
-      <a class="header__logo page__link" href="/">NewsExplorer</a>
+  <header class="header header_style_background-image ">
+    <div class="header__nav-bar page__fields">
+      <div class="header__logo-wrap">
+        <a class="header__logo page__link" href="/">NewsExplorer</a>
+        <i class="header__nav-icon header__nav-icon_theme_black"></i>
+      </div>
       <ul class="header__menu">
         <li>
-          <a class="header__menu-link header__menu-link_theme_black header__menu-link_active page__link"
-            href="/">Главная</a>
+          <a class="header__menu-link header__menu-link_active page__link" href="/">Главная</a>
         <li>
-          <a class="header__menu-link header__menu-link_theme_black page__link" href="/saved-news.html">Сохраненные
+          <a class="header__menu-link header__menu-link_inactive page__link" href="/saved-news.html">Сохраненные
             статьи</a>
         </li>
         </li>
         <li>
-          <button
-            class="button header__menu-link_type_button header__menu-link header__menu-link_theme_black page__link">Грета
+          <button class="button header__menu-link_type_button header__menu-link page__link">Грета
             <i class="header__logout-icon header__logout-icon_theme_black"></i>
           </button>
         </li>
       </ul>
-    </header>
-
-    <div class="search">
+    </div>
+    <section class="search page__fields">
       <div class="search__column-wrapper">
         <h1 class="search__title">Что творится в мире?</h1>
         <p class="search__description page__text">
@@ -57,8 +57,8 @@
           <button type="submit" class="button button_active search__button">Искать</button>
         </form>
       </div>
-    </div>
-  </div>
+    </section>
+  </header>
 
   <section class="search-results page__fields">
     <div class="search-results__search">

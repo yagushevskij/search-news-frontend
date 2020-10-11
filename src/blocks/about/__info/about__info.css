@@ -13,3 +13,9 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .about__info {
+    margin-top: 24px;
+  }
+}

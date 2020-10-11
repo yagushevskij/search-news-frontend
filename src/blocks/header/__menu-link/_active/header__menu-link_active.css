@@ -1,11 +1,11 @@
-.header__menu-link.header__menu-link_active {
+.header__menu-link_active {
   border-bottom: 3px solid;
-  padding-bottom: 27px;
+  padding-bottom: 25px;
   color: inherit;
 }
 
 @media screen and (max-width: 1000px) {
-  .header__menu-link.header__menu-link_active {
-    padding-bottom: 22px;
+  .header__menu-link_active {
+    padding-bottom: 20px;
   }
 }

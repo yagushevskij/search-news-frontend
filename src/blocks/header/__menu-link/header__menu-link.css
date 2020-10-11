@@ -1,10 +1,6 @@
 @import url('./_type/header__menu-link_type_button.css');
 @import url('./_active/header__menu-link_active.css');
-
-@import url(./_theme/header__menu-link_theme_white.css);
-@import url('./_theme/header__menu-link_theme_black.css');
-@import url('./_active/header__menu-link_active.css');
-@import url('./_type/header__menu-link_type_button.css');
+@import url('./_inactive/header__menu-link_inactive.css');
 
 .header__menu-link {
   font-family: 'Roboto', Arial, sans-serif;
@@ -14,11 +10,18 @@
   line-height: 24px;
   text-decoration: none;
   margin: 0 0 0 32px;
+  color: inherit;
 }
 
 @media screen and (max-width: 1000px) {
   .header__menu-link {
     font-size: 16px;
     margin: 0 0 0 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__menu-link {
+    margin-top: 30px
   }
 }

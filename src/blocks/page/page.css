@@ -5,8 +5,11 @@
 @import url('./__link/page__link.css');
 
 .page {
+  display: flex;
+  flex-direction: column;
   margin: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 1440px;
+  min-width: 320px;
 }

@@ -7,3 +7,9 @@
     padding: 0 40px;
   }
 }
+
+@media screen and (max-width: 425px) {
+  .page__fields {
+    padding: 0 16px;
+  }
+}

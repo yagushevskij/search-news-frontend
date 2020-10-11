@@ -1,0 +1,21 @@
+.header__nav-bar {
+  display: flex;
+  justify-content: space-between;
+  min-height: 80px;
+  align-items: center;
+  position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+  .header__nav-bar {
+    min-height: 66px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__nav-bar {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
