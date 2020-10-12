@@ -16,4 +16,5 @@
 html, css, webpack
 
 ### Примечание
+Страница [сохраненных новостей](https://yagushevskij.github.io/serch-news-frontend/saved-news.html) gh-pages.
 В текущей версии проекта отсутствует JavaScript
