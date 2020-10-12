@@ -14,7 +14,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  background-color: #FFFFFF;
+  background-color: #fff;
   border-radius: 20px;
   overflow: hidden;
   max-height: 576px;

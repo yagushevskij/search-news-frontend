@@ -53,6 +53,7 @@
   "dependencies": {
     "@bem/sdk.config": "^0.1.0",
     "babel-polyfill": "^6.26.0",
-    "core-js": "^3.4.1"
+    "core-js": "^3.4.1",
+    "path": "^0.12.7"
   }
 }

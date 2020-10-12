@@ -27,8 +27,8 @@
 
 @media screen and (max-width: 425px) {
   .popup {
-    top: 65px;
-    background-color: white;
-    border-radius: 16px;
+    align-items: flex-start;
+    top: 115px;
+    background-color: #fff;
   }
 }
