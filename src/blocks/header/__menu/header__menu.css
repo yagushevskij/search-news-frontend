@@ -1,3 +1,5 @@
+@import url('./_mobile/header__menu_mobile.css');
+
 .header__menu {
   display: flex;
   align-items: center;
@@ -6,14 +8,25 @@
   margin: 0;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 700px) {
   .header__menu {
-    /* display: none; */
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    bottom: -100px;
+    top: 65px;
     left: 0;
+    box-sizing: border-box;
     width: 100%;
+    background-color: inherit;
+    padding: 0 40px 24px 40px;
+    margin: 0;
+    z-index: 3;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__menu {
+    padding: 0 16px 24px 16px;
   }
 }

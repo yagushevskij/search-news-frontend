@@ -4,8 +4,26 @@
   color: inherit;
 }
 
+.header__menu-link_active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 1px;
+  background-color:#C4C4C4;
+  display: block;
+  z-index: 1;
+}
+
 @media screen and (max-width: 1000px) {
   .header__menu-link_active {
     padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header__menu-link_active {
+    border-bottom: none;
   }
 }

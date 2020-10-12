@@ -9,4 +9,11 @@
   border-radius: 16px;
   position: relative;
   box-sizing: border-box;
+  margin-top: -50px;
+}
+
+@media screen and (max-width: 425px) {
+  .popup__content {
+    margin-top: -500px;
+  }
 }

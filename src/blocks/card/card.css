@@ -17,7 +17,7 @@
   background-color: #FFFFFF;
   border-radius: 20px;
   overflow: hidden;
-  height: 576px;
+  max-height: 576px;
 }
 
 .card:hover:before {
@@ -32,8 +32,14 @@
   z-index: 1;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
   .card {
-    height: 420px;
+    max-height: 420px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    max-height: 550px;
   }
 }

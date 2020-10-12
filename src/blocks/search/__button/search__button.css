@@ -13,3 +13,12 @@
 .search__button:active {
   background: #2A65CC;
 }
+
+@media screen and (max-width: 425px) {
+  .search__button {
+    position: static;
+    height: auto;
+    line-height: 56px;
+    margin-top: 45px;
+  }
+}

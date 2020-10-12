@@ -4,10 +4,12 @@
   background-position: center;
 }
 
-.card__icon_type_delete:hover ~ .card__icon_type_message {
-  display: flex;
-}
-
 .card__icon_type_delete:hover {
   background-image:url('../../../../images/icon-delete-news-hover.svg');
+}
+
+@media screen and (min-width: 769px) {
+  .card__icon_type_delete:hover ~ .card__icon_type_message {
+    display: flex;
+  }
 }

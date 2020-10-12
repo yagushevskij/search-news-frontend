@@ -1,3 +1,5 @@
-.header_style_background-none {
+.header.header_style_background-none {
   color: #1A1B22;
+  fill: #1A1B22;
+  background-color: #ffffff;
 }

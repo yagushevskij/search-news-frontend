@@ -12,35 +12,39 @@
 
 <body class="page">
 
-  <!-- <header class="header page__fields">
-      <a class="header__logo page__link" href="/">NewsExplorer</a>
-      <ul class="header__menu">
-        <li>
-          <a class="header__menu-link header__menu-link_theme_black header__menu-link_active page__link" href="/">Главная</a>
-        </li>
-        <li>
-          <button class="button header__menu-link_type_button header__menu-link header__menu-link_theme_black page__link">Авторизоваться</button>
-        </li>
-      </ul>
-    </header> -->
-
-  <header class="header header_style_background-image ">
-    <div class="header__nav-bar page__fields">
+  <header class="header header_style_background-image">
+    <div class="header__nav-bar header__nav-bar_is-opened page__fields">
       <div class="header__logo-wrap">
         <a class="header__logo page__link" href="/">NewsExplorer</a>
-        <i class="header__nav-icon header__nav-icon_theme_black"></i>
+        <div class="header__icons-wrap">
+          <i class="header__nav-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="16" height="2" />
+              <rect x="4" y="14" width="16" height="2" />
+            </svg>
+          </i>
+          <i class="header__nav-icon header__nav-icon_type_close header__nav-icon_is-hidden">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13.4142 12L18.7071 17.2928L17.2929 18.7071L11.2929 12.7071C10.9024 12.3165 10.9024 11.6834 11.2929 11.2928L17.2929 5.29285L18.7071 6.70706L13.4142 12Z" />
+              <path
+                d="M10.8787 12L5.58583 17.2928L7.00005 18.7071L13 12.7071C13.3906 12.3165 13.3906 11.6834 13 11.2928L7.00005 5.29285L5.58583 6.70706L10.8787 12Z" />
+            </svg>
+          </i>
+        </div>
       </div>
       <ul class="header__menu">
-        <li>
+        <li class="header__nav-item">
           <a class="header__menu-link header__menu-link_active page__link" href="/">Главная</a>
-        <li>
-          <a class="header__menu-link header__menu-link_inactive page__link" href="/saved-news.html">Сохраненные
-            статьи</a>
         </li>
-        </li>
-        <li>
-          <button class="button header__menu-link_type_button header__menu-link page__link">Грета
-            <i class="header__logout-icon header__logout-icon_theme_black"></i>
+        <li class="header__nav-item">
+          <button class="button header__menu-link_type_button header__menu-link page__link">Авторизоваться
+            <i class="header__logout-icon">
+              <svg xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" />
+              </svg>
+            </i>
           </button>
         </li>
       </ul>
@@ -63,7 +67,7 @@
   <section class="search-results page__fields">
     <div class="search-results__search">
       <i class="circle-preloader"></i>
-      <p class="search-results__description page__text-description">Идет поиск новостей...</p>
+      <h2 class="search-results__description page__text-description">Идет поиск новостей...</h2>
     </div>
   </section>
 
@@ -74,9 +78,9 @@
       <img class="about__avatar" src="<%=require('./images/avatar-full.jpg')%>" alt="Аватар автора">
     </picture>
     <div class="about__info">
-      <h1 class="page__title">
+      <h2 class="page__title">
         Об авторе
-      </h1>
+      </h2>
       <p class="about__paragraph page__text">
         Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими
         технологиями разработки владеете.
@@ -89,7 +93,7 @@
   </section>
 
   <section class="search-results page__fields">
-    <h1 class="page__title">Результаты поиска</h1>
+    <h2 class="page__title">Результаты поиска</h2>
     <div class="cards-container">
       <article class="card">
         <a href="https://lenta.ru/" class="card__news-link" target="_blank"></a>
@@ -104,13 +108,13 @@
         </div>
         <div class="card__info-container">
           <p class="card__date">2 августа, 2019</p>
-          <h2 class="card__title">Национальное достояние – парки</h2>
+          <h3 class="card__title">Национальное достояние – парки</h3>
           <p class="card__description">
             В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
             парков – охраняемых территорий,
             где и сегодня каждый может приобщиться к природе.
           </p>
-          <a href="https://lenta.ru/" class="card__source-link" target="_blank">лента.ру</a>
+          <a href="https://lenta.ru/" class="card__source-link page__link" target="_blank">лента.ру</a>
         </div>
       </article>
       <article class="card">
@@ -128,12 +132,12 @@
         </div>
         <div class="card__info-container">
           <p class="card__date">2 августа, 2019</p>
-          <h2 class="card__title">Лесные огоньки: история одной фотографии</h2>
+          <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
           <p class="card__description">
             Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую
             красоту одного из местных чудес природы.
           </p>
-          <a href="https://meduza.io/" class="card__source-link" target="_blank">медуза</a>
+          <a href="https://meduza.io/" class="card__source-link page__link" target="_blank">медуза</a>
         </div>
       </article>
       <article class="card">
@@ -141,7 +145,7 @@
         <div class="card__image-container">
           <img src="<%=require('./images/image_07.jpg')%>" class="card__image" alt="Вьющийся куст">
           <div class="card__icons-container">
-            <div class="card__icons-container">
+            <div class="card__icons-wrapper">
               <button class="card__icon card__icon_type_save"></button>
               <div class="card__icon card__icon_type_message">Войдите, чтобы сохранять статьи</div>
             </div>
@@ -149,21 +153,42 @@
         </div>
         <div class="card__info-container">
           <p class="card__date">2 августа, 2019</p>
-          <h2 class="card__title">&laquo;Первозданная тайга&raquo;: новый фотопроект Игоря Шпиленка</h2>
+          <h3 class="card__title">&laquo;Первозданная тайга&raquo;: новый фотопроект Игоря Шпиленка</h3>
           <p class="card__description">
             Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения.
           </p>
-          <a href="https://ria.ru/" class="card__source-link" target="_blank">риа</a>
+          <a href="https://ria.ru/" class="card__source-link page__link" target="_blank">риа</a>
         </div>
       </article>
     </div>
     <button class="button button_type_load-more">Показать еще</button>
   </section>
 
+  <section class="about page__fields">
+    <picture>
+      <source srcset="<%=require('./images/avatar-mobile.jpg')%>" media="(max-width: 425px)">
+      <source srcset="<%=require('./images/avatar-tablet.jpg')%>" media="(max-width: 1000px)">
+      <img class="about__avatar" src="<%=require('./images/avatar-full.jpg')%>" alt="Аватар автора">
+    </picture>
+    <div class="about__info">
+      <h2 class="page__title">
+        Об авторе
+      </h2>
+      <p class="about__paragraph page__text">
+        Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими
+        технологиями разработки владеете.
+      </p>
+      <p class="about__paragraph page__text">
+        Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь
+        потенциальным заказчикам.
+      </p>
+    </div>
+  </section>
+
   <section class="search-results page__fields">
     <div class="search-results__search">
       <i class="search-results__not-found-icon"></i>
-      <h1 class="search-results__title">Ничего не найдено</h1>
+      <h2 class="search-results__title">Ничего не найдено</h2>
       <p class="search-results__description page__text-description">
         К сожалению по вашему запросу ничего не найдено.
       </p>
@@ -176,19 +201,26 @@
     </div>
     <div class="footer__resources">
       <ul class="footer__links">
-        <li><a class="footer__link page__text page__link" href="/">Главная</a></li>
-        <li><a class="footer__link page__text page__link" href="https://praktikum.yandex.ru/"
+        <li class="footer__link"><a class="page__text page__link" href="/">Главная</a></li>
+        <li class="footer__link"><a class="page__text page__link" href="https://praktikum.yandex.ru/"
             target="_blank">Яндекс.Практикум</a></li>
       </ul>
-      <ul class="footer__links">
-        <li>
-          <a href="https://github.com/yagushevskij" class="footer__social-icon page__link" target="_blank"><img
-              src="<%=require('./images/icon-github.svg')%>"></a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/yagushevskij" class="footer__social-icon page__link" target="_blank"><img
-              src="<%=require('./images/icon-facebook.svg')%>"></a>
-        </li>
+      <ul class="footer__icons">
+        <li class="footer__social-icon"><a href="https://github.com/yagushevskij" class="page__link" target="_blank">
+            <svg viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10.9998 0.89473C5.41678 0.89473 0.894531 5.42318 0.894531 11C0.894531 15.4664 3.7915 19.2505 7.80507 20.5904C8.30754 20.6834 8.49364 20.3733 8.49364 20.1003C8.49364 19.8584 8.48744 19.2256 8.48123 18.382C5.67111 18.9899 5.07559 17.0297 5.07559 17.0297C4.61654 15.8634 3.95278 15.5533 3.95278 15.5533C3.03469 14.9267 4.02102 14.9391 4.02102 14.9391C5.03217 15.0136 5.57186 15.9813 5.57186 15.9813C6.47135 17.5259 7.93534 17.0793 8.51225 16.8187C8.6053 16.1674 8.86584 15.7207 9.15119 15.4664C6.90558 15.2121 4.54831 14.3436 4.54831 10.4727C4.54831 9.36851 4.93912 8.46902 5.59047 7.76184C5.48501 7.5075 5.13762 6.47775 5.68972 5.0882C5.68972 5.0882 6.53958 4.81525 8.46882 6.12416C9.27526 5.90084 10.1375 5.78918 10.9998 5.78297C11.8559 5.78918 12.7243 5.90084 13.5308 6.12416C15.46 4.81525 16.3099 5.0882 16.3099 5.0882C16.862 6.47775 16.5146 7.5075 16.4091 7.76184C17.0543 8.46902 17.4451 9.36851 17.4451 10.4727C17.4451 14.356 15.0816 15.2059 12.8298 15.4602C13.1896 15.7704 13.5184 16.3907 13.5184 17.3336C13.5184 18.6859 13.5059 19.7715 13.5059 20.1065C13.5059 20.3795 13.6858 20.6896 14.2007 20.5904C18.2143 19.2505 21.1051 15.4664 21.1051 11.0062C21.1051 5.42318 16.5828 0.89473 10.9998 0.89473Z"
+                fill="#191717" />
+            </svg>
+          </a></li>
+        <li class="footer__social-icon"><a href="https://www.facebook.com/yagushevskij" class="page__link"
+            target="_blank">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.8958 0H1.10417C0.494167 0 0 0.494167 0 1.10417V18.8967C0 19.5058 0.494167 20 1.10417 20H10.6833V12.255H8.07667V9.23667H10.6833V7.01083C10.6833 4.4275 12.2608 3.02083 14.5658 3.02083C15.67 3.02083 16.6183 3.10333 16.895 3.14V5.84L15.2967 5.84083C14.0433 5.84083 13.8008 6.43667 13.8008 7.31V9.2375H16.79L16.4008 12.2558H13.8008V20H18.8975C19.5058 20 20 19.5058 20 18.8958V1.10417C20 0.494167 19.5058 0 18.8958 0V0Z"
+                fill="black" />
+            </svg>
+          </a></li>
       </ul>
     </div>
   </footer>
@@ -199,17 +231,13 @@
       <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
       <h2 class="popup__title">Вход</h2>
       <form class="popup__form" name="login">
-        <label>
-          <div class="popup__field-title">Email
-            <input type="text" name="email" class="popup__input" placeholder="Введите почту" required>
-          </div>
-        </label>
+        <div class="popup__field-title">Email
+          <input type="text" name="email" class="popup__input" placeholder="Введите почту" required>
+        </div>
         <span class="error-message popup__frontend-error-message">Неправильный формат email</span>
-        <label>
-          <div class="popup__field-title">Пароль
-            <input type="password" name="about" class="popup__input" placeholder="Введите пароль" required>
-          </div>
-        </label>
+        <div class="popup__field-title">Пароль
+          <input type="password" name="about" class="popup__input" placeholder="Введите пароль" required>
+        </div>
         <span class="error-message popup__frontend-error-message"></span>
         <button type="submit" class="button button_inactive popup__button">Войти</button>
       </form>
@@ -224,23 +252,17 @@
       <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
       <h2 class="popup__title">Регистрация</h2>
       <form class="popup__form" name="login">
-        <label>
-          <div class="popup__field-title">Email
-            <input type="text" name="email" class="popup__input" placeholder="Введите почту" required>
-          </div>
-        </label>
+        <div class="popup__field-title">Email
+          <input type="text" name="email" class="popup__input" placeholder="Введите почту" required>
+        </div>
         <span class="error-message popup__frontend-error-message"></span>
-        <label>
-          <div class="popup__field-title">Пароль
-            <input type="password" name="about" class="popup__input" placeholder="Введите пароль" required>
-          </div>
-        </label>
+        <div class="popup__field-title">Пароль
+          <input type="password" name="about" class="popup__input" placeholder="Введите пароль" required>
+        </div>
         <span class="error-message popup__frontend-error-message"></span>
-        <label>
-          <div class="popup__field-title">Имя
-            <input type="text" name="name" class="popup__input" placeholder="Введите своё имя" required>
-          </div>
-        </label>
+        <div class="popup__field-title">Имя
+          <input type="text" name="name" class="popup__input" placeholder="Введите своё имя" required>
+        </div>
         <span class="error-message popup__backend-error-message">Такой пользователь уже есть</span>
         <button type="submit" class="button button_active popup__button">Зарегистрироваться</button>
       </form>

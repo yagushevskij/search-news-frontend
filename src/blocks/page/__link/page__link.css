@@ -1,4 +1,5 @@
 .page__link {
+  text-decoration: none;
   transition: opacity 0.1s;
 }
 
