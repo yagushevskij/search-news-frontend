@@ -6,11 +6,11 @@
   border: 1px solid #D1D2D6;
   font-size: 16px;
   font-weight: 400;
-  color: #1A1B22;
+  color: #1a1b22;
 }
 
 .search__input::placeholder {
-  color: #B6BCBF;
+  color: #b6bcbf;
 }
 
 .search__input:active, :hover, :focus {
