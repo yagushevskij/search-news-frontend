@@ -16,7 +16,7 @@
 <body class="page">
 
   <header class="header header_style_background-image">
-    <div class="header__nav-bar header__nav-bar_is-opened page__fields">
+    <div class="header__nav-bar page__fields">
       <div class="header__logo-wrap">
         <a class="header__logo page__link" href="/index.html">NewsExplorer</a>
         <div class="header__icons-wrap">
@@ -36,7 +36,8 @@
           </i>
         </div>
       </div>
-      <ul class="header__menu">
+
+      <!-- <ul class="header__menu">
         <li class="header__nav-item">
           <a class="header__menu-link header__menu-link_active page__link" href="/index.html">Главная</a>
         </li>
@@ -50,7 +51,30 @@
             </i>
           </button>
         </li>
+      </ul> -->
+
+      <!-- При просмотре измениения состояния шапки блок ниже нужно закомментировать -->
+      <!-- Начало блока -->
+      <ul class="header__menu">
+        <li class="header__nav-item">
+          <a class="header__menu-link header__menu-link_active page__link" href="/index.html">Главная</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__menu-link header__menu-link_inactive page__link" href="/saved-news.html">Сохраненные
+            статьи</a>
+        </li>
+        <li class="header__nav-item">
+          <button class="button header__menu-link_type_button header__menu-link page__link">Грета
+            <i class="header__logout-icon header__logout-icon_is-visible">
+              <svg xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" />
+              </svg>
+            </i>
+          </button>
+        </li>
       </ul>
+      <!-- Конец блока -->
     </div>
     <section class="search page__fields">
       <div class="search__column-wrapper">
@@ -67,34 +91,25 @@
     </section>
   </header>
 
-  <section class="search-results page__fields">
+  <!-- <section class="search-results page__fields">
     <div class="search-results__search">
       <i class="circle-preloader"></i>
       <h2 class="search-results__description page__text-description">Идет поиск новостей...</h2>
     </div>
-  </section>
+  </section> -->
 
-  <section class="about page__fields">
-    <picture>
-      <source srcset="<%=require('./images/avatar-mobile.jpg')%>" media="(max-width: 425px)">
-      <source srcset="<%=require('./images/avatar-tablet.jpg')%>" media="(max-width: 1000px)">
-      <img class="about__avatar" src="<%=require('./images/avatar-full.jpg')%>" alt="Аватар автора">
-    </picture>
-    <div class="about__info">
-      <h2 class="page__title">
-        Об авторе
-      </h2>
-      <p class="about__paragraph page__text">
-        Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими
-        технологиями разработки владеете.
-      </p>
-      <p class="about__paragraph page__text">
-        Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь
-        потенциальным заказчикам.
+  <!-- <section class="search-results page__fields">
+    <div class="search-results__search">
+      <i class="search-results__not-found-icon"></i>
+      <h2 class="search-results__title">Ничего не найдено</h2>
+      <p class="search-results__description page__text-description">
+        К сожалению по вашему запросу ничего не найдено.
       </p>
     </div>
-  </section>
+  </section> -->
 
+  <!-- При просмотре измениения состояния шапки блок ниже нужно закомментировать -->
+  <!-- Начало блока -->
   <section class="search-results page__fields">
     <h2 class="page__title">Результаты поиска</h2>
     <div class="cards-container">
@@ -166,6 +181,7 @@
     </div>
     <button class="button button_type_load-more">Показать еще</button>
   </section>
+  <!-- Конец блока -->
 
   <section class="about page__fields">
     <picture>
@@ -184,16 +200,6 @@
       <p class="about__paragraph page__text">
         Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь
         потенциальным заказчикам.
-      </p>
-    </div>
-  </section>
-
-  <section class="search-results page__fields">
-    <div class="search-results__search">
-      <i class="search-results__not-found-icon"></i>
-      <h2 class="search-results__title">Ничего не найдено</h2>
-      <p class="search-results__description page__text-description">
-        К сожалению по вашему запросу ничего не найдено.
       </p>
     </div>
   </section>
@@ -233,9 +239,9 @@
     <div class="popup__content popup__content_type_form">
       <i class="popup__close">
         <svg viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="1.93934" y1="25.9393" x2="25.9393" y2="1.93934" stroke-width="3"/>
-          <line x1="2.06066" y1="1.93934" x2="26.0607" y2="25.9393" stroke-width="3"/>
-          </svg>
+          <line x1="1.93934" y1="25.9393" x2="25.9393" y2="1.93934" stroke-width="3" />
+          <line x1="2.06066" y1="1.93934" x2="26.0607" y2="25.9393" stroke-width="3" />
+        </svg>
       </i>
       <h2 class="popup__title">Вход</h2>
       <form class="popup__form" name="login">
@@ -259,9 +265,9 @@
     <div class="popup__content popup__content_type_form">
       <i class="popup__close">
         <svg viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="1.93934" y1="25.9393" x2="25.9393" y2="1.93934" stroke-width="3"/>
-          <line x1="2.06066" y1="1.93934" x2="26.0607" y2="25.9393" stroke-width="3"/>
-          </svg>
+          <line x1="1.93934" y1="25.9393" x2="25.9393" y2="1.93934" stroke-width="3" />
+          <line x1="2.06066" y1="1.93934" x2="26.0607" y2="25.9393" stroke-width="3" />
+        </svg>
       </i>
       <h2 class="popup__title">Регистрация</h2>
       <form class="popup__form" name="login">
@@ -289,9 +295,9 @@
     <div class="popup__content popup__content_type_info">
       <i class="popup__close">
         <svg viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="1.93934" y1="25.9393" x2="25.9393" y2="1.93934" stroke-width="3"/>
-          <line x1="2.06066" y1="1.93934" x2="26.0607" y2="25.9393" stroke-width="3"/>
-          </svg>
+          <line x1="1.93934" y1="25.9393" x2="25.9393" y2="1.93934" stroke-width="3" />
+          <line x1="2.06066" y1="1.93934" x2="26.0607" y2="25.9393" stroke-width="3" />
+        </svg>
       </i>
       <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
       <a class="popup__alt-link popup__alt-link_type_login page__link" href="/">Войти</a>

@@ -1,4 +1,4 @@
-# Фронтенд [сервиса поиска новостей](https://yagushevskij.github.io/serch-news-frontend/) v1.0.0
+# Фронтенд [сервиса поиска новостей](https://yagushevskij.github.io/serch-news-frontend/) v1.0.5
 
 ## Описание проекта
 Учебная дипломная работа [яндекс.практикум](https://praktikum.yandex.ru/) фронтенд разработки сайта по поиску новостей, выполненной по [макету](https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1528)

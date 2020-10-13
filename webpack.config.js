@@ -28,7 +28,12 @@ module.exports = {
     {
       test: /\.css$/,
       use: [
-        (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+        isDev ? 'style-loader' : {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: '../',
+          },
+        },
         'css-loader',
         'postcss-loader',
       ],
@@ -71,7 +76,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './[name].[contenthash].css',
+      filename: './styles/[name].[contenthash].css',
     }),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),

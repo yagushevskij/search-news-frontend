@@ -11,7 +11,11 @@
 }
 
 .search__button:active {
-  background: #2A65CC;
+  background: #2a65cc;
+}
+
+.search__button:hover {
+  background: #347eff;
 }
 
 @media screen and (max-width: 425px) {
