@@ -1,11 +1,9 @@
 .card__icon_type_delete {
-  background-image: url('../../../../images/icon-delete-news.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+  fill: #b6Bcbf;
 }
 
 .card__icon_type_delete:hover {
-  background-image:url('../../../../images/icon-delete-news-hover.svg');
+  fill: #1a1b22;;
 }
 
 @media screen and (min-width: 769px) {

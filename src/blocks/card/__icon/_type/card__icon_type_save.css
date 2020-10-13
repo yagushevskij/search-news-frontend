@@ -1,7 +1,5 @@
 .card__icon_type_save {
-  background-image: url('../../../../images/icon-save-news.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+  stroke: #b6Bcbf;
 }
 
 .card__icon_type_save:hover ~ .card__icon_type_message {
@@ -9,5 +7,5 @@
 }
 
 .card__icon_type_save:hover {
-  background-image:url('../../../../images/icon-save-news-hover.svg');
+  stroke: #1a1b22;
 }

@@ -1,7 +1,7 @@
 .card__icon_type_saved {
-  background-image: url('../../../../images/icon-saved-news.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+  fill-rule: nonzero;
+  fill: #2f71e5;
+  stroke: #2f71e5;
 }
 
 .card__icon_type_saved:hover ~ .card__icon_type_message {
