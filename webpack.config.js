@@ -40,7 +40,7 @@ module.exports = {
     },
     {
       test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
-      use: ['file-loader?name=/images/[name].[ext]&esModule=false', {
+      use: ['file-loader?name=./images/[name].[ext]&esModule=false', {
         loader: 'image-webpack-loader',
         options: {
           mozjpeg: {
@@ -98,7 +98,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/saved-news.html',
-      filename: 'index.html',
+      filename: 'saved-news.html',
       chunks: ['savednews'],
     }),
     new WebpackMd5Hash(),
