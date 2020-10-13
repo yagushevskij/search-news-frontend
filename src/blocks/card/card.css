@@ -17,7 +17,7 @@
   background-color: #fff;
   border-radius: 20px;
   overflow: hidden;
-  max-height: 576px;
+  max-height: 580px;
 }
 
 .card:hover:before {
