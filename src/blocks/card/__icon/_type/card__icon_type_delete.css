@@ -1,0 +1,13 @@
+.card__icon_type_delete {
+  fill: #b6Bcbf;
+}
+
+.card__icon_type_delete:hover {
+  fill: #1a1b22;;
+}
+
+@media screen and (min-width: 769px) {
+  .card__icon_type_delete:hover ~ .card__icon_type_message {
+    display: flex;
+  }
+}

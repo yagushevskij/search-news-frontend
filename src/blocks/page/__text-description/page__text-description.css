@@ -1,0 +1,12 @@
+.page__text-description {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+}
+
+@media screen and (max-width: 1000px) {
+  .page__text-description {
+    font-size: 14px;
+  }
+}

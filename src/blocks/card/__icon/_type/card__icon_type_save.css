@@ -1,0 +1,11 @@
+.card__icon_type_save {
+  stroke: #b6Bcbf;
+}
+
+.card__icon_type_save:hover ~ .card__icon_type_message {
+  display: flex;
+}
+
+.card__icon_type_save:hover {
+  stroke: #1a1b22;
+}

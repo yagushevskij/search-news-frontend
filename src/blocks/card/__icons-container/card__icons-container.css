@@ -1,0 +1,17 @@
+.card__icons-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 24px 24px 0 24px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__icons-container {
+    padding: 8px 8px 0 8px;
+  }
+}

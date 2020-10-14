@@ -1,0 +1,24 @@
+.popup__close {
+  stroke: #fff;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 520px) {
+  .popup__close {
+    top: -43px;
+    right: 18px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .popup__close {
+    top: -43px;
+    right: 18px;
+    stroke: none;
+  }
+}

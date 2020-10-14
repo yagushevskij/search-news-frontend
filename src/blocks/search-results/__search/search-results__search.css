@@ -1,0 +1,8 @@
+.search-results__search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  max-width: 350px;
+  text-align: center;
+}

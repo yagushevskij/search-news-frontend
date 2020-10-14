@@ -1,0 +1,15 @@
+.page__title {
+  font-family: 'Robotoslab', Arial, sans-serif;
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 400;
+  color: #1a1b22;
+  margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .page__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

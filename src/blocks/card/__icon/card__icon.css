@@ -1,0 +1,17 @@
+@import url('./_type/card__icon_type_save.css');
+@import url('./_type/card__icon_type_saved.css');
+@import url('./_type/card__icon_type_message.css');
+@import url('./_type/card__icon_type_delete.css');
+@import url('./_type/card__icon_type_tag.css');
+
+.card__icon {
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 0;
+  z-index: 1;
+  cursor: pointer;
+}

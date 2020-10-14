@@ -1,0 +1,19 @@
+@import url('./_type/popup__content_type_info.css');
+@import url('./_type/popup__content_type_form.css');
+
+.popup__content {
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 16px;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: -50px;
+}
+
+@media screen and (max-width: 425px) {
+  .popup__content {
+    /* margin-top: -500px; */
+  }
+}

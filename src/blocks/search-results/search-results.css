@@ -1,0 +1,26 @@
+@import url('./__search/search-results__search.css');
+@import url('./__title/search-results__title.css');
+@import url('./__description/search-results__description.css');
+@import url('./__not-found-icon/search-results__not-found-icon.css');
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6f7;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 1000px) {
+  .search-results {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .search-results {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}

@@ -1,0 +1,9 @@
+.search__column-wrapper {
+  max-width: 608px;
+}
+
+@media screen and (max-width: 1000px) {
+  .search__column-wrapper {
+    max-width: 450px;
+  }
+}

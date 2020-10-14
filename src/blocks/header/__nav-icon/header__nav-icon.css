@@ -1,0 +1,13 @@
+@import url('./_is-hidden/header__nav-icon_is-hidden.css');
+
+.header__nav-icon {
+  height: 24px;
+  width: 24px;
+  fill: inherit;
+}
+
+@media screen and (min-width: 700px) {
+  .header__nav-icon {
+    display: none;
+  }
+}

@@ -1,0 +1,6 @@
+.popup__backend-error-message {
+  display: flex;
+  min-height: 30px;
+  align-self: center;
+  align-items: flex-end;
+}

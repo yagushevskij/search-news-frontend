@@ -1,0 +1,9 @@
+@import url('./_is-visible/header__logout-icon_is-visible.css');
+
+.header__logout-icon {
+  display: none;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  fill: inherit;
+}

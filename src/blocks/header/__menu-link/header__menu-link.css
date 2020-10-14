@@ -1,0 +1,25 @@
+@import url('./_type/header__menu-link_type_button.css');
+@import url('./_active/header__menu-link_active.css');
+@import url('./_inactive/header__menu-link_inactive.css');
+
+.header__menu-link {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 1000px) {
+  .header__menu-link {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header__menu-link {
+    font-size: 18px;
+  }
+}

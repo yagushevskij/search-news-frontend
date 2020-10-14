@@ -1,0 +1,21 @@
+.header_style_background-image {
+  background-image: url('../../../images/head-wrapper-full.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  width: 100%;
+  fill: #fff;
+  stroke: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  .header_style_background-image {
+    background-image: url('../../../images/head-wrapper-tablet.jpg');
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header_style_background-image {
+    background-image: url('../../../images/head-wrapper-mobile.jpg');
+  }
+}

@@ -1,0 +1,16 @@
+@import url('./__fields/page__fields.css');
+@import url('./__title/page__title.css');
+@import url('./__text/page__text.css');
+@import url('./__text-description/page__text-description.css');
+@import url('./__link/page__link.css');
+
+.page {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 1440px;
+  min-width: 320px;
+}

@@ -1,0 +1,20 @@
+.header__menu-link.header__menu-link_type_button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  border-color: inherit;
+  border-radius: 100px;
+  padding: 9px 12px;
+  color: inherit;
+}
+
+@media screen and (max-width: 700px) {
+  .header__menu-link.header__menu-link_type_button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    line-height: 56px;
+  }
+}
