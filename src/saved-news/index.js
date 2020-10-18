@@ -1,4 +1,4 @@
-import '../../pages/saved-news.css';
+import '../pages/saved-news.css';
 
 const headerIconsContainer = document.querySelector('.header__icons-wrap');
 
