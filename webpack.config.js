@@ -10,8 +10,8 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
-    index: './src/scripts/index.js',
-    savednews: './src/scripts/saved-news/index.js',
+    index: './src/index.js',
+    savednews: './src/saved-news/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -97,7 +97,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/saved-news.html',
+      template: './src/saved-news/index.html',
       filename: 'saved-news.html',
       chunks: ['savednews'],
     }),
