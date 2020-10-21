@@ -4,15 +4,34 @@ import {
   popupContainer,
 }
   from './scripts/constants/selectors';
+import config from './scripts/constants/config';
 import { UserButton } from './scripts/components/UserButton';
-import { Popup } from './scripts/components/Popup';
+// import { Popup } from './scripts/components/Popup';
+import { SigninPopup } from './scripts/components/SigninPopup';
+import { SignupPopup } from './scripts/components/SignupPopup';
+import { InformPopup } from './scripts/components/InformPopup';
+import { Header } from './scripts/components/Header';
+import { Form } from './scripts/components/Form';
+import { MainApi } from './scripts/api/MainApi';
 
-const popup = new Popup(popupContainer,
-  { signin: loginPopupTemplate, signup: signupPopupTemplate, success: successPopupTemplate });
+'use strict';
+
+const mainApi = new MainApi(config);
+const createForm = (...arg) => new Form(...arg);
+
+const signinPopup = new SigninPopup(loginPopupTemplate, popupContainer, createForm, mainApi);
+const signupPopup = new SignupPopup(signupPopupTemplate, popupContainer, createForm, mainApi);
+const informPopup = new InformPopup(successPopupTemplate, popupContainer);
+
+informPopup.setDependencies({ signinPopup });
+signinPopup.setDependencies({ signupPopup });
+signupPopup.setDependencies({ informPopup, signinPopup });
+
+// const header = new Header({color: 'white'})
 
 const userButton = new UserButton(userButtonElement);
 userButton.addEventListener('click', () => {
-  popup.open('signin');
+  signinPopup.open();
 });
 
 // const button = document.querySelector('.header__menu-link_type_button');

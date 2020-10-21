@@ -83,7 +83,7 @@
         <form class="search__form" name="search">
           <input type="text" name="query" class="search__input" placeholder="Введите тему новости" minlength="2"
             maxlength="30" required>
-          <button type="submit" class="button button_active search__button">Искать</button>
+          <button type="submit" class="button search__button">Искать</button>
         </form>
       </div>
     </section>
@@ -257,16 +257,17 @@
         </svg>
       </i>
       <h2 class="popup__title">Вход</h2>
-      <form class="popup__form" name="login">
+      <form class="popup__form" name="signin">
         <div class="popup__field-title">Email
           <input type="email" name="email" class="popup__input" placeholder="Введите почту" required>
+          <span class="error-message popup__frontend-error-message"></span>
         </div>
-        <span class="error-message popup__frontend-error-message">Неправильный формат email</span>
         <div class="popup__field-title">Пароль
-          <input type="password" name="about" class="popup__input" placeholder="Введите пароль" required>
+          <input type="password" name="password" class="popup__input" placeholder="Введите пароль" required>
+          <span class="error-message popup__frontend-error-message"></span>
+          <span class="error-message popup__backend-error-message"></span>
         </div>
-        <span class="error-message popup__frontend-error-message"></span>
-        <button type="submit" class="button button_inactive popup__button">Войти</button>
+        <button type="submit" class="button popup__button" disabled>Войти</button>
       </form>
       <div class="popup__alt-container">или <a class="popup__alt-link popup__alt-link_register page__link" href="#">Зарегистрироваться</a></div>
     </div>
@@ -281,20 +282,22 @@
         </svg>
       </i>
       <h2 class="popup__title">Регистрация</h2>
-      <form class="popup__form" name="login">
+      <form class="popup__form" name="signup">
         <div class="popup__field-title">Email
           <input type="email" name="email" class="popup__input" placeholder="Введите почту" required>
+          <span class="error-message popup__frontend-error-message"></span>
         </div>
-        <span class="error-message popup__frontend-error-message"></span>
         <div class="popup__field-title">Пароль
-          <input type="password" name="about" class="popup__input" placeholder="Введите пароль" required>
+          <input type="password" name="password" class="popup__input" placeholder="Введите пароль" required>
+          <span class="error-message popup__frontend-error-message"></span>
         </div>
-        <span class="error-message popup__frontend-error-message"></span>
         <div class="popup__field-title">Имя
-          <input type="text" name="name" class="popup__input" placeholder="Введите своё имя" required>
+          <input type="text" name="username" class="popup__input" placeholder="Введите своё имя" minlength="2"
+          maxlength="30" required>
+          <span class="error-message popup__frontend-error-message"></span>
+          <span class="error-message popup__backend-error-message"></span>
         </div>
-        <span class="error-message popup__backend-error-message">Такой пользователь уже есть</span>
-        <button type="submit" class="button button_active popup__button">Зарегистрироваться</button>
+        <button type="submit" class="button popup__button" disabled>Зарегистрироваться</button>
       </form>
       <div class="popup__alt-container">или <a class="popup__alt-link popup__alt-link_login page__link" href="/">Войти</a></div>
     </div>

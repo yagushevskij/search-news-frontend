@@ -7,4 +7,11 @@
   font-weight: 500;
   cursor: pointer;
   border-radius: 100px;
+  color: #fff;
+  background-color: #2f71e5;
+}
+
+.button:disabled {
+  background-color: #e6e8eb;
+  color: #B6BCBF;
 }

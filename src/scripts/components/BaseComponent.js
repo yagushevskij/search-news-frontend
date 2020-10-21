@@ -1,7 +1,6 @@
 export class BaseComponent {
   constructor(domElement) {
     this._domElement = domElement;
-    this._handlersArray = [];
   }
   _setHandlers = (handlersArray) => {
     handlersArray.forEach((el) => {

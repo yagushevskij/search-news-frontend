@@ -1,6 +1,7 @@
-.button_type_load-more {
+.button.button_type_load-more {
   align-self: center;
   background-color: #fff;
+  color: #1a1b22;
   min-width: 288px;
   min-height: 64px;
   border: 0;
