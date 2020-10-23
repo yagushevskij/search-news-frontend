@@ -15,7 +15,7 @@
 
 <body class="page">
 
-  <header class="header header_style_background-image">
+  <header class="header">
     <div class="header__nav-bar page__fields">
       <div class="header__logo-wrap">
         <a class="header__logo page__link" href="/">NewsExplorer</a>
@@ -38,40 +38,25 @@
       </div>
 
       <ul class="header__menu">
-        <li class="header__nav-item">
-          <a class="header__menu-link header__menu-link_active page__link" href="./index.html">Главная</a>
-        </li>
-        <li class="header__nav-item">
-          <button class="button header__menu-link_type_button header__menu-link page__link">Авторизоваться
-            <i class="header__logout-icon">
-              <svg xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" />
-              </svg>
-            </i>
-          </button>
-        </li>
+        <template id="header-menu-link">
+          <li class="header__nav-item">
+            <a class="header__menu-link page__link" href=""></a>
+          </li>
+        </template>
+        <template id="header-menu-button">
+          <li class="header__nav-item">
+            <button class="button header__menu-link_type_button header__menu-link page__link">
+              <span class="header__button-text"></span>
+              <i class="header__logout-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" />
+                </svg>
+              </i>
+            </button>
+          </li>
+        </template>
       </ul>
-
-      <!-- <ul class="header__menu">
-        <li class="header__nav-item">
-          <a class="header__menu-link header__menu-link_active page__link" href="./index.html">Главная</a>
-        </li>
-        <li class="header__nav-item">
-          <a class="header__menu-link header__menu-link_inactive page__link" href="./saved-news.html">Сохраненные
-            статьи</a>
-        </li>
-        <li class="header__nav-item">
-          <button class="button header__menu-link_type_button header__menu-link page__link">Грета
-            <i class="header__logout-icon header__logout-icon_is-visible">
-              <svg viewBox="0 0 24 24" stroke="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" />
-              </svg>
-            </i>
-          </button>
-        </li>
-      </ul> -->
 
     </div>
     <section class="search page__fields">
@@ -246,7 +231,7 @@
     </div>
   </footer>
 
-    <div class="popup"></div>
+  <div class="popup"></div>
 
   <template id="login-popup">
     <div class="popup__content popup__content_type_form">
@@ -263,13 +248,15 @@
           <span class="error-message popup__frontend-error-message"></span>
         </div>
         <div class="popup__field-title">Пароль
-          <input type="password" name="password" class="popup__input" placeholder="Введите пароль" required>
+          <input type="password" name="password" class="popup__input" placeholder="Введите пароль" minlength="8"
+            required>
           <span class="error-message popup__frontend-error-message"></span>
           <span class="error-message popup__backend-error-message"></span>
         </div>
         <button type="submit" class="button popup__button" disabled>Войти</button>
       </form>
-      <div class="popup__alt-container">или <a class="popup__alt-link popup__alt-link_register page__link" href="#">Зарегистрироваться</a></div>
+      <div class="popup__alt-container">или <a class="popup__alt-link popup__alt-link_register page__link"
+          href="#">Зарегистрироваться</a></div>
     </div>
   </template>
 
@@ -288,18 +275,20 @@
           <span class="error-message popup__frontend-error-message"></span>
         </div>
         <div class="popup__field-title">Пароль
-          <input type="password" name="password" class="popup__input" placeholder="Введите пароль" required>
+          <input type="password" name="password" class="popup__input" placeholder="Введите пароль" minlength="8"
+            required>
           <span class="error-message popup__frontend-error-message"></span>
         </div>
         <div class="popup__field-title">Имя
           <input type="text" name="username" class="popup__input" placeholder="Введите своё имя" minlength="2"
-          maxlength="30" required>
+            maxlength="30" required>
           <span class="error-message popup__frontend-error-message"></span>
           <span class="error-message popup__backend-error-message"></span>
         </div>
         <button type="submit" class="button popup__button" disabled>Зарегистрироваться</button>
       </form>
-      <div class="popup__alt-container">или <a class="popup__alt-link popup__alt-link_login page__link" href="/">Войти</a></div>
+      <div class="popup__alt-container">или <a class="popup__alt-link popup__alt-link_login page__link"
+          href="/">Войти</a></div>
     </div>
   </template>
 

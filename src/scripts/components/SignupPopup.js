@@ -1,10 +1,9 @@
 import { Popup } from './Popup';
 
 export class SignupPopup extends Popup {
-  constructor(template, container, createForm, mainApi) {
+  constructor(template, container, createForm) {
     super(template, container);
     this._createForm = createForm;
-    this.mainApi = mainApi;
   }
   setDependencies = (dependencies = {}) => {
     this._informPopup = dependencies.informPopup;
@@ -12,13 +11,14 @@ export class SignupPopup extends Popup {
   }
   _init() {
     super._init();
-    this._form = this._createForm(this._view, this.mainApi);
+    const form = this._view.querySelector('form');
+    this._form = this._createForm(form);
   };
-  _registration = () => {
-    event.preventDefault();
-    this._form.submit()
-      .then((result) => {
-        if (result) {
+  _registration = (evt) => {
+    evt.preventDefault();
+    this._form.signup()
+      .then((data) => {
+        if (data) {
           this.close();
           this._informPopup.open();
         }

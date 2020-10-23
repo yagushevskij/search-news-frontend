@@ -4,6 +4,7 @@ export class MainApi {
     this._userApiUrl = config.userApiUrl;
     this._signinApiUrl = config.signinApiUrl;
     this._signupApiUrl = config.signupApiUrl;
+    this._signoutApiUrl = config.signoutApiUrl;
     this._headers = config.headers;
   }
   signup = (dataObj) => {
@@ -30,7 +31,30 @@ export class MainApi {
       })
       .catch((err) => { throw err; })
   };
+  signout = () => {
+    return fetch(this._signoutApiUrl, {
+      method: 'get',
+      headers: this._headers,
+      credentials: 'include',
+    })
+      .then(res => {
+        return this._checkResponse(res);
+      })
+      .catch((err) => { throw err; })
+  };
   getUserData = () => {
+    return fetch(this._userApiUrl, {
+      method: 'get',
+      headers: this._headers,
+      credentials: 'include',
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        return false;
+      })
+      .catch((err) => { throw err; })
   };
   getArticles = () => {
   };
@@ -46,26 +70,3 @@ export class MainApi {
       .then(Promise.reject.bind(Promise))
   };
 }
-
-// signUp = (userEmail, userPassword, userName) => {
-//   return fetch(`${this.options.myURL}/signup`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     credentials: 'include',
-//     body: JSON.stringify({
-//       email: userEmail,
-//       password: userPassword,
-//       name: userName
-//     }),
-//   })
-//     .then(res => {
-//       if (res.ok) {
-//         return res.json();
-//       }
-//       const json = res.json();
-//       return json.then(Promise.reject.bind(Promise))
-//     })
-//     .catch((err) => { throw err; })
-// }

@@ -1,11 +1,10 @@
 import './pages/index.css';
 import {
-  userButtonElement, loginPopupTemplate, successPopupTemplate, signupPopupTemplate,
-  popupContainer,
+  loginPopupTemplate, successPopupTemplate, signupPopupTemplate,
+  headerMenuLinkTemplate, headerButtonTemplate, popupContainer, headerContainer,
 }
   from './scripts/constants/selectors';
-import config from './scripts/constants/config';
-import { UserButton } from './scripts/components/UserButton';
+import { config, headerConf, headerMenuLinks } from './scripts/constants/config';
 // import { Popup } from './scripts/components/Popup';
 import { SigninPopup } from './scripts/components/SigninPopup';
 import { SignupPopup } from './scripts/components/SignupPopup';
@@ -17,47 +16,24 @@ import { MainApi } from './scripts/api/MainApi';
 'use strict';
 
 const mainApi = new MainApi(config);
-const createForm = (...arg) => new Form(...arg);
+const getUserData = () => mainApi.getUserData();
+const header = new Header(headerContainer, getUserData,
+  {
+    style: headerConf.style.image, page: headerConf.page.index, menuLinks: headerMenuLinks,
+    menuLinkTemplate: headerMenuLinkTemplate, menuButtonTemplate: headerButtonTemplate,
+  });
 
-const signinPopup = new SigninPopup(loginPopupTemplate, popupContainer, createForm, mainApi);
-const signupPopup = new SignupPopup(signupPopupTemplate, popupContainer, createForm, mainApi);
+const createForm = (...arg) => new Form(mainApi, ...arg);
+
+const signinPopup = new SigninPopup(loginPopupTemplate, popupContainer, createForm,
+  header.render);
+const signupPopup = new SignupPopup(signupPopupTemplate, popupContainer, createForm);
 const informPopup = new InformPopup(successPopupTemplate, popupContainer);
+
+const signout = () => mainApi.signout();
+const openSigninPopup = () => signinPopup.open();
 
 informPopup.setDependencies({ signinPopup });
 signinPopup.setDependencies({ signupPopup });
 signupPopup.setDependencies({ informPopup, signinPopup });
-
-// const header = new Header({color: 'white'})
-
-const userButton = new UserButton(userButtonElement);
-userButton.addEventListener('click', () => {
-  signinPopup.open();
-});
-
-// const button = document.querySelector('.header__menu-link_type_button');
-// const popups = document.querySelectorAll('.popup');
-// const closeButtons = document.querySelectorAll('.popup__close');
-// const headerIconsContainer = document.querySelector('.header__icons-wrap');
-
-// const header = document.querySelector('.header');
-// const headerMenu = document.querySelector('.header__menu');
-
-// button.addEventListener('click', () => {
-//   popups.forEach((el) => {
-//     el.classList.add('popup_is-opened');
-//   });
-// });
-
-// closeButtons.forEach((el) => {
-//   el.addEventListener('click', () => {
-//     el.parentElement.parentElement.classList.remove('popup_is-opened');
-//   });
-// });
-
-// headerIconsContainer.addEventListener('click', () => {
-//   headerIconsContainer.children.forEach((el) => {
-//     el.classList.toggle('header__nav-icon_is-hidden');
-//   });
-//   header.classList.toggle('header_style_fill');
-//   headerMenu.classList.toggle('header__menu_mobile');
-// });
+header.setDependencies({ openSigninPopup, signout });

@@ -1,22 +1,28 @@
 import { Popup } from './Popup';
 
 export class SigninPopup extends Popup {
-  constructor(template, container, createForm, mainApi) {
+  constructor(template, container, createForm, renderHeader) {
     super(template, container);
     this._createForm = createForm;
-    this.mainApi = mainApi;
+    this._renderHeader = renderHeader;
   }
   setDependencies = (dependencies = {}) => {
     this._signupPopup = dependencies.signupPopup;
   }
   _init() {
     super._init();
-    this._form = this._createForm(this._view, this.mainApi);
+    const form = this._view.querySelector('form');
+    this._form = this._createForm(form);
   };
-  _login = (event) => {
-    event.preventDefault();
-    this._form.submit()
-      .then((result) => console.log(result))
+  _login = (evt) => {
+    evt.preventDefault();
+    this._form.signin()
+      .then((data) => {
+        if (data) {
+          this._renderHeader({ isLoggedIn: true, userName: data.username })
+          this.close();
+        }
+      })
       .catch((err) => console.log(err))
   };
   _setupHandlers() {

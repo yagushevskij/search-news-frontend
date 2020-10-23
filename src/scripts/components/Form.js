@@ -1,37 +1,29 @@
 import { BaseComponent } from './BaseComponent';
 
 export class Form extends BaseComponent {
-  constructor(element, mainApi) {
+  constructor(mainApi, form) {
     super()
-    this._form = element.querySelector('form');
+    this._form = form;
     this.mainApi = mainApi;
 
     this._setupHandlers()
     this._setHandlers(this._handlersArray);
   }
-  submit = () => {
-    if (this._form.name === 'signin') {
-      return this.mainApi.signin(this._getInfo())
-        .then((data) => {
-          console.log(data)
-          return true;
-        })
-        .catch((err) => {
-          this.setServerError(err.message)
-          return false;
-        });
-    }
-    if (this._form.name === 'signup') {
-      return this.mainApi.signup(this._getInfo())
-      .then((data) => {
-        console.log(data)
-        return true;
-      })
+  signin = () => {
+    return this.mainApi.signin(this._getInfo())
+      .then((data) => data)
       .catch((err) => {
         this.setServerError(err.message)
         return false;
       });
-    }
+  };
+  signup = () => {
+    return this.mainApi.signup(this._getInfo())
+      .then((data) => data)
+      .catch((err) => {
+        this.setServerError(err.message)
+        return false;
+      });
   };
   setServerError = (message) => {
     const errorEl = this._form.querySelector('.popup__backend-error-message');

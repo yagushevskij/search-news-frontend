@@ -9,21 +9,20 @@ export class Popup extends BaseComponent {
     this._setupHandlers = this._setupHandlers.bind(this);
   }
   _init() {
-    // event.preventDefault();
     this._setupHandlers()
     this._setHandlers(this._handlersArray);
   }
   open = () => {
-    // event.preventDefault();
     this._setContent();
     this._init();
     this._container.classList.add('popup_is-opened');
+    event.preventDefault();
   };
   close = () => {
     this._container.classList.remove('popup_is-opened');
     // this._removeHandlers(this._handlersArray);
     this._clearContent();
-  };
+  }
   _setContent = () => {
     this._view = this._template.content.cloneNode(true).children[0];
     this._container.append(this._view);
