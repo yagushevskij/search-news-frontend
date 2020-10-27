@@ -7,7 +7,7 @@ export class MainApi {
     this._signoutApiUrl = config.signoutApiUrl;
     this._headers = config.headers;
   }
-  signup = (dataObj) => {
+  register = (dataObj) => {
     return fetch(this._signupApiUrl, {
       method: 'post',
       headers: this._headers,
@@ -19,7 +19,7 @@ export class MainApi {
       })
       .catch((err) => { throw err; })
   };
-  signin = (dataObj) => {
+  login = (dataObj) => {
     return fetch(this._signinApiUrl, {
       method: 'post',
       headers: this._headers,
@@ -31,7 +31,7 @@ export class MainApi {
       })
       .catch((err) => { throw err; })
   };
-  signout = () => {
+  logout = () => {
     return fetch(this._signoutApiUrl, {
       method: 'get',
       headers: this._headers,
@@ -58,9 +58,28 @@ export class MainApi {
   };
   getArticles = () => {
   };
-  createArticle = () => {
+  createArticle = (dataObj) => {
+    return fetch(this._articlesApiUrl, {
+      method: 'post',
+      headers: this._headers,
+      credentials: 'include',
+      body: JSON.stringify(dataObj)
+    })
+      .then(res => {
+        return this._checkResponse(res);
+      })
+      .catch((err) => { throw err; })
   };
-  removeArticle = () => {
+  removeArticle = (id) => {
+    return fetch(this._articlesApiUrl + '/' + id, {
+      method: 'delete',
+      headers: this._headers,
+      credentials: 'include',
+    })
+      .then(res => {
+        return this._checkResponse(res);
+      })
+      .catch((err) => { throw err; })
   };
   _checkResponse = (res) => {
     if (res.ok) {

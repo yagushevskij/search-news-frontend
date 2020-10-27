@@ -1,5 +1,6 @@
 .card__icon_type_save {
   stroke: #b6Bcbf;
+  fill: none;
 }
 
 .card__icon_type_save:hover ~ .card__icon_type_message {

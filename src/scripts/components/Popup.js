@@ -30,36 +30,6 @@ export class Popup extends BaseComponent {
   _clearContent = () => {
     this._view.remove();
   };
-  // _submit = (event) => {
-  //   event.preventDefault();
-  //   this._form.submit(this.mainApi)
-  //   .then((result) => console.log(result))
-  //   // this._form.send(this.mainApi) ? console.log('Успешно!') : console.log('Неудача...');
-  //   // this.close();
-  // };
-
-  // // _setEventListeners = () => {
-  // //     /// Пробуем найти в DOM элементе ссылки переключения попапов и если находится, то добавляем слушатели
-  // //   try {
-  // //     const signupLink = this._view.querySelector('.popup__alt-link_register');
-  // //     const signinLink = this._view.querySelector('.popup__alt-link_login');
-  // //     if (signupLink) {
-  // //       signupLink.addEventListener('click', this.close);
-  // //       signupLink.addEventListener('click', () => {this.open('signup')})
-  // //     }
-  // //     if (signinLink) {
-  // //       signinLink.addEventListener('click', this.close);
-  // //       signinLink.addEventListener('click', () => {
-  // //         event.preventDefault();
-  // //         this.open('signin');
-  // //       })
-  // //     }
-  // //   }
-  // //   finally {
-  // //     this._view.querySelector('.popup__close').addEventListener('click', this.close);
-  // //     // this._form.setEventListeners();
-  // //   }
-  // // };
   _setupHandlers() {
     return this._handlersArray = [{
       element: this._view.querySelector('.popup__close'),
@@ -67,34 +37,4 @@ export class Popup extends BaseComponent {
       callbacks: [this.close]
     }];
   };
-      // {
-      //   element: this._view,
-      //   event: 'submit',
-      //   callbacks: [this._submit]
-      // }
-    // /// Пробуем найти в DOM элементе ссылки переключения попапов и если находится, то добавляем в массив обработчкиков
-    // try {
-    //   const signupLink = this._view.querySelector('.popup__alt-link_register');
-    //   const signinLink = this._view.querySelector('.popup__alt-link_login');
-    //   if (signupLink) {
-    //     this._handlersArray.push({
-    //       element: signupLink,
-    //       event: 'click',
-    //       callbacks: [this.close, () => { this.open('signup') }]
-    //     })
-    //   }
-    //   if (signinLink) {
-    //     this._handlersArray.push({
-    //       element: signinLink,
-    //       event: 'click',
-    //       callbacks: [this.close, () => {
-    //         event.preventDefault();
-    //         this.open('signin')
-    //       }]
-    //     })
-    //   }
-    // }
-    // finally {
-    //   return this._handlersArray;
-    // }
 }

@@ -2,9 +2,11 @@
 @import url('./__title/search-results__title.css');
 @import url('./__description/search-results__description.css');
 @import url('./__not-found-icon/search-results__not-found-icon.css');
+@import url('./_is-visible/search-results_is-visible.css');
+@import url('./__result-wrapper/search-results__result-wrapper.css');
 
 .search-results {
-  display: flex;
+  display: none;
   flex-direction: column;
   background-color: #f5f6f7;
   padding-top: 80px;

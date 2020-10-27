@@ -67,96 +67,54 @@
         </p>
         <form class="search__form" name="search">
           <input type="text" name="query" class="search__input" placeholder="Введите тему новости" minlength="2"
-            maxlength="30" required>
+            required>
           <button type="submit" class="button search__button">Искать</button>
         </form>
       </div>
     </section>
   </header>
 
-  <!-- <section class="search-results page__fields">
-    <div class="search-results__search">
-      <i class="circle-preloader"></i>
-      <h2 class="search-results__description page__text-description">Идет поиск новостей...</h2>
-    </div>
-  </section> -->
-
-  <!-- <section class="search-results page__fields">
-    <div class="search-results__search">
-      <i class="search-results__not-found-icon"></i>
-      <h2 class="search-results__title">Ничего не найдено</h2>
-      <p class="search-results__description page__text-description">
-        К сожалению по вашему запросу ничего не найдено.
-      </p>
-    </div>
-  </section> -->
-
-  <!-- При просмотре измениения состояния шапки блок ниже нужно закомментировать -->
-  <!-- Начало блока -->
   <section class="search-results page__fields">
-    <h2 class="page__title">Результаты поиска</h2>
-    <div class="cards-container">
-      <article class="card">
-        <a href="https://lenta.ru/" class="card__news-link" target="_blank"></a>
-        <div class="card__image-container">
-          <img src="<%=require('./images/image_08.jpg')%>" class="card__image" alt="Кусты с сиреневыми листьями">
-          <div class="card__icons-container">
-            <div class="card__icons-wrapper">
-              <button class="card__icon card__icon_type_save">
-                <svg width="24" height="24" viewBox="-5 -4 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.382 12.714L1 16.942V1h12v15.942l-5.382-4.228L7 12.228l-.618.486z" stroke-width="2" />
-                </svg>
-              </button>
-              <div class="card__icon card__icon_type_message">Войдите, чтобы сохранять статьи</div>
-            </div>
-          </div>
-        </div>
-        <div class="card__info-container">
-          <p class="card__date">2 августа, 2019</p>
-          <h3 class="card__title">Национальное достояние – парки</h3>
-          <p class="card__description">
-            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
-            парков – охраняемых территорий,
-            где и сегодня каждый может приобщиться к природе.
-          </p>
-          <a href="https://lenta.ru/" class="card__source-link page__link" target="_blank">лента.ру</a>
-        </div>
-      </article>
-      <article class="card">
-        <a href="https://meduza.io" class="card__news-link" target="_blank"></a>
-        <div class="card__image-container">
-          <img src="<%=require('./images/image_04.jpg')%>" class="card__image" alt="Комнатное растение">
-          <div class="card__icons-container">
-            <div class="card__icons-wrapper">
-              <div class="card__icons-wrapper">
-                <button class="card__icon card__icon_type_saved">
-                  <svg width="24" height="24" viewBox="-5 -4 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.382 12.714L1 16.942V1h12v15.942l-5.382-4.228L7 12.228l-.618.486z" stroke-width="2" />
-                  </svg>
-                </button>
-                <div class="card__icon card__icon_type_message">Нажмите, чтобы удалить из коллекции</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card__info-container">
-          <p class="card__date">2 августа, 2019</p>
-          <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
-          <p class="card__description">
-            Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую
-            красоту одного из местных чудес природы.
-          </p>
-          <a href="https://meduza.io/" class="card__source-link page__link" target="_blank">медуза</a>
-        </div>
-      </article>
+    <template id="is-loading">
+      <div class="search-results__search">
+        <i class="circle-preloader"></i>
+        <h2 class="search-results__description page__text-description">Идет поиск новостей...</h2>
+      </div>
+    </template>
+    <template id="not-found">
+      <div class="search-results__search">
+        <i class="search-results__not-found-icon"></i>
+        <h2 class="search-results__title">Ничего не найдено</h2>
+        <p class="search-results__description page__text-description">
+          К сожалению по вашему запросу ничего не найдено.
+        </p>
+      </div>
+    </template>
+    <template id="server-error">
+      <div class="search-results__search">
+        <i class="search-results__not-found-icon"></i>
+        <h2 class="search-results__title">На сервере произошла ошибка</h2>
+        <p class="search-results__description page__text-description">
+          Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.
+        </p>
+      </div>
+    </template>
+    <template id="cards-block">
+      <div class="search-results__result-wrapper">
+        <h2 class="page__title">Результаты поиска</h2>
+        <div class="cards-container"></div>
+        <button class="button button_is-hidden button_type_load-more">Показать еще</button>
+      </div>
+    </template>
+    <template id="news-card">
       <article class="card">
         <a href="https://ria.ru" class="card__news-link" target="_blank"></a>
         <div class="card__image-container">
-          <img src="<%=require('./images/image_07.jpg')%>" class="card__image" alt="Вьющийся куст">
+          <img src="<%=require('./images/image_07.jpg')%>" class="card__image" alt="">
           <div class="card__icons-container">
             <div class="card__icons-wrapper">
               <button class="card__icon card__icon_type_save">
-                <svg width="24" height="24" viewBox="-5 -4 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="24" height="24" viewBox="-5 -4 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.382 12.714L1 16.942V1h12v15.942l-5.382-4.228L7 12.228l-.618.486z" stroke-width="2" />
                 </svg>
               </button>
@@ -175,10 +133,8 @@
           <a href="https://ria.ru/" class="card__source-link page__link" target="_blank">риа</a>
         </div>
       </article>
-    </div>
-    <button class="button button_type_load-more">Показать еще</button>
+    </template>
   </section>
-  <!-- Конец блока -->
 
   <section class="about page__fields">
     <picture>

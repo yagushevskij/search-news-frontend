@@ -1,6 +1,7 @@
 @import url('./_active/button_active.css');
 @import url('./_inactive/button_inactive.css');
 @import url('./_type/button_type_load-more.css');
+@import url('./_is-hidden/button_is-hidden.css');
 
 .button {
   font-family: 'Roboto', Arial, sans-serif;

@@ -17,7 +17,4 @@ export class BaseComponent {
       })
     })
   };
-  addEventListener = (...args) => {
-    this._domElement.addEventListener(...args);
-  };
 }

@@ -1,8 +1,10 @@
 import { Popup } from './Popup';
+import { getInputsObj } from '../utils';
 
 export class SignupPopup extends Popup {
-  constructor(template, container, createForm) {
+  constructor(template, container, register, createForm) {
     super(template, container);
+    this._register = register;
     this._createForm = createForm;
   }
   setDependencies = (dependencies = {}) => {
@@ -11,19 +13,20 @@ export class SignupPopup extends Popup {
   }
   _init() {
     super._init();
-    const form = this._view.querySelector('form');
-    this._form = this._createForm(form);
+    this._formElem = this._view.querySelector('form');
+    const backendErrorEl = this._formElem.querySelector('.popup__backend-error-message');
+    this._form = this._createForm(this._formElem, backendErrorEl);
   };
-  _registration = (evt) => {
+  _signup = (evt) => {
     evt.preventDefault();
-    this._form.signup()
-      .then((data) => {
-        if (data) {
-          this.close();
-          this._informPopup.open();
-        }
-      })
-      .catch((err) => console.log(err))
+    return this._register(getInputsObj(this._formElem))
+    .then((data) => {
+      this.close();
+      this._informPopup.open();
+    })
+    .catch((err) => {
+      this._form.setServerError(err.message)
+    });
   };
   _setupHandlers() {
     super._setupHandlers();
@@ -35,7 +38,7 @@ export class SignupPopup extends Popup {
       {
         element: this._view,
         event: 'submit',
-        callbacks: [this._registration]
+        callbacks: [this._signup]
       })
   };
 }

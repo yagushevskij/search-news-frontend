@@ -1,5 +1,8 @@
+import { getPrevDate } from '../utils';
+
 const MAIN_API_URL = NODE_ENV === 'production' ? 'https://api.turbomegapro.ru' : 'http://localhost:3000';
-const config = {
+const NEWS_API_URL = NODE_ENV === 'production' ? 'https://nomoreparties.co/news/v2/everything?' : 'https://newsapi.org/v2/everything?';
+const mainApiConf = {
   articlesApiUrl: `${MAIN_API_URL}/articles`,
   userApiUrl: `${MAIN_API_URL}/users/me`,
   signoutApiUrl: `${MAIN_API_URL}/users/logout`,
@@ -7,6 +10,22 @@ const config = {
   signupApiUrl: `${MAIN_API_URL}/signup`,
   headers: {
     'Content-Type': 'application/json',
+  },
+};
+const newsApiConf = {
+  apiKey: '5cccd8960b3e402cae29c544e480673f', // API ключ сервиса newsapi.org
+  from: 7, // Количество дней назад от текущей даты: начало интервала
+  to: 0, // Количество дней назад от текущей даты: конец интервала
+  sortBy: 'popularity', // Сортировка
+  pageSize: 100, // Максимальная длинна массива новостей
+  getUrl(query) { // При вызове функции передаем запрос
+    return NEWS_API_URL
+      + `q=${query}&`
+      + `from=${getPrevDate(this.from)}&`
+      + `to=${getPrevDate(this.to)}&`
+      + `sortBy=${this.sortBy}&`
+      + `pageSize=${this.pageSize}&`
+      + `apiKey=${this.apiKey}`;
   },
 };
 
@@ -37,4 +56,11 @@ const headerMenuLinks = [
   },
 ];
 
-export { config, headerConf, headerMenuLinks };
+const cardListConf = {
+  cardsOnPage: 3, // Количество карточек при первоначальной загрузке результатов поиска
+  loadMoreCount: 3, // Количество загружаемых карточек по клику на кнопку
+};
+
+export {
+  mainApiConf, newsApiConf, headerConf, headerMenuLinks, cardListConf,
+};

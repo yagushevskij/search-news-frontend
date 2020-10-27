@@ -1,0 +1,4 @@
+.search-results__result-wrapper {
+  display: flex;
+  flex-direction: column;
+}

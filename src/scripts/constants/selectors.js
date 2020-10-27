@@ -6,8 +6,18 @@ const successPopupTemplate = document.querySelector('#reg-success-popup');
 const headerMenuLinkTemplate = document.querySelector('#header-menu-link');
 const headerButtonTemplate = document.querySelector('#header-menu-button');
 const headerContainer = document.querySelector('.header');
+const searchForm = document.querySelector('.search__form');
+const searchResultContainer = document.querySelector('.search-results');
+const isLoadingTemp = document.querySelector('#is-loading');
+const notFoundTemp = document.querySelector('#not-found');
+const srvErrTemp = document.querySelector('#server-error');
+const cardsBlockTemp = document.querySelector('#cards-block');
+const newsCardTemp = document.querySelector('#news-card');
+const showMoreBtnTemp = document.querySelector('#show-more-button');
 
 export {
   userButtonElement, popupContainer, loginPopupTemplate, signupPopupTemplate,
   successPopupTemplate, headerContainer, headerMenuLinkTemplate, headerButtonTemplate,
+  searchForm, searchResultContainer, isLoadingTemp, notFoundTemp, srvErrTemp, cardsBlockTemp,
+  newsCardTemp, showMoreBtnTemp,
 };

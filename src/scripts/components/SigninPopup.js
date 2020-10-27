@@ -1,8 +1,10 @@
 import { Popup } from './Popup';
+import { getInputsObj } from '../utils';
 
 export class SigninPopup extends Popup {
-  constructor(template, container, createForm, renderHeader) {
+  constructor(template, container, login, createForm, renderHeader) {
     super(template, container);
+    this._login = login;
     this._createForm = createForm;
     this._renderHeader = renderHeader;
   }
@@ -11,19 +13,20 @@ export class SigninPopup extends Popup {
   }
   _init() {
     super._init();
-    const form = this._view.querySelector('form');
-    this._form = this._createForm(form);
+    this._formElem = this._view.querySelector('form');
+    const backendErrorEl = this._formElem.querySelector('.popup__backend-error-message');
+    this._form = this._createForm(this._formElem, backendErrorEl);
   };
-  _login = (evt) => {
+  _signin = (evt) => {
     evt.preventDefault();
-    this._form.signin()
+    return this._login(getInputsObj(this._formElem))
       .then((data) => {
-        if (data) {
-          this._renderHeader({ isLoggedIn: true, userName: data.username })
-          this.close();
-        }
+        this._renderHeader({ isLoggedIn: true, userName: data.username })
+        this.close();
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        this._form.setServerError(err.message)
+      });
   };
   _setupHandlers() {
     super._setupHandlers();
@@ -35,7 +38,7 @@ export class SigninPopup extends Popup {
       {
         element: this._view,
         event: 'submit',
-        callbacks: [this._login]
+        callbacks: [this._signin]
       })
   };
 }

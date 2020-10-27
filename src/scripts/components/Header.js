@@ -29,7 +29,7 @@ export class Header extends BaseComponent {
   };
   setDependencies = (dependencies = {}) => {
     this._openSigninPopup = dependencies.openSigninPopup;
-    this._signout = dependencies.signout;
+    this._logout = dependencies.logout;
   };
   render = (props = {}) => {
     this._isLoggedIn = props.isLoggedIn || false;
@@ -87,9 +87,9 @@ export class Header extends BaseComponent {
     this._domElement.classList.toggle('header_style_fill');
     this._menu.classList.toggle('header__menu_mobile');
   }
-  _logout = () => {
-    this._signout()
-    .then(() => this.render())
+  _signout = () => {
+    this._logout()
+    .then(() => window.location.reload())
     .catch((err) => console.log(err));
   };
   _setupHandlers = () => {
@@ -97,7 +97,7 @@ export class Header extends BaseComponent {
       this._handlersArray.push({
         element: this._authButton,
         event: 'click',
-        callbacks: [this._logout]
+        callbacks: [this._signout]
       });
     } else {
       this._handlersArray.push({
