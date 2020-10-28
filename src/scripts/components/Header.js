@@ -13,7 +13,7 @@ export class Header extends BaseComponent {
     this._menuLinkTemplate = config.menuLinkTemplate;
     this._menuButtonTemplate = config.menuButtonTemplate;
     this._getUserData = getUserData;
-    this._handlersArray = [
+    this._handlers = [
       {
         element: this._mobileIconsContainer,
         event: 'click',
@@ -31,15 +31,22 @@ export class Header extends BaseComponent {
     this._openSigninPopup = dependencies.openSigninPopup;
     this._logout = dependencies.logout;
   };
-  render = (props = {}) => {
-    this._isLoggedIn = props.isLoggedIn || false;
-    this._userName = props.userName || null;
+  _hideUserPages = () => {
+    if (this._page === 'savedNews' && !this._userName) { // Если неавторизованный пользователь пробует загрузить страницу
+      // сохраненных новостей, то редирректим его на главную.
+      document.location.href='./index.html';
+    }
+  };
+  render = (options = {}) => {
+    this._isLoggedIn = options.isLoggedIn || false;
+    this._userName = options.userName || null;
+    this._hideUserPages() // Если в этой функции условие выполнится, то сработает редиррект и дальнейший код не выполнится.
     this._clearContent();
     this._setMenuLinks();
     this._setLoginButton();
     this._domElement.classList.add(this._styleModificator);
-    this._setupHandlers();
-    this._setHandlers(this._handlersArray);
+    this._initHandlers();
+    this._setHandlers(this._handlers);
   };
   _getAuthProps = () => {
     return this._getUserData()
@@ -92,15 +99,15 @@ export class Header extends BaseComponent {
     .then(() => window.location.reload())
     .catch((err) => console.log(err));
   };
-  _setupHandlers = () => {
+  _initHandlers = () => {
     if (this._isLoggedIn) {
-      this._handlersArray.push({
+      this._handlers.push({
         element: this._authButton,
         event: 'click',
         callbacks: [this._signout]
       });
     } else {
-      this._handlersArray.push({
+      this._handlers.push({
         element: this._authButton,
         event: 'click',
         callbacks: [this._openSigninPopup]

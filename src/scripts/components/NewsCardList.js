@@ -20,25 +20,29 @@ export class NewsCardList extends BaseComponent {
   };
   _renderCards = () => {
     for (let i = this._cardIndexFrom; i <= this._cardIndexTo; i++) {
-      if (i <= this._cardsArray.length) {
+      if (i < this._cardsArray.length) {
         this.addCard(this._cardsArray[i])
         this._cardIndexFrom = i; // Записываем индекс последнего элемента в цикле
       }
+    }
+    this._cardIndexFrom += 1 // Увеличиваем на 1 индекс элемента, с которого начнется перебор
+    this._cardIndexTo += this._config.loadMoreCount; // Увеличиваем индекс последнего элемента для перебора в массиве на число из настроек
+    if (this._cardIndexFrom >= this._cardsArray.length) {
+      this._hideShowMoreBtn();
     }
   };
   renderResults = (cardsArray, params = {}) => {
     this.clearContainer();
     this._cardsArray = cardsArray;
-    this._isLoggedIn = Boolean(params.userData);
-    this._keyword = params.keyword;
+    this._params = params;
     if (this._cardsArray.length > 0) {
       this.renderInfoBlock(this._cardsBlockTemp);
+      this._button = this._container.querySelector('.button_type_load-more');
       this._cardsContainer = this._container.querySelector('.cards-container');
       this._cardIndexFrom = 0; // Создаем переменную с дефолтным индексом, с которого начнется перебор массива.
       this._cardIndexTo = this._config.cardsOnPage - 1;
       this._renderCards();
-      if (this._cardIndexTo < this._cardsArray.length) { // Если длинна массива больше, чем последний добавленный в DOM элемент, то покажем кнопку show-more и навесим обработчки
-        this._button = this._container.querySelector('.button_type_load-more');
+      if (this._cardIndexFrom < this._cardsArray.length) { // Если длинна массива больше, чем последний добавленный в DOM элемент, то покажем кнопку show-more и навесим обработчки
         this._showShowMoreBtn();
       }
     } else {
@@ -60,7 +64,7 @@ export class NewsCardList extends BaseComponent {
       {
         element: this._button,
         event: 'click',
-        callbacks: [this.showMore]
+        callbacks: [this._renderCards]
       }
     ]
     this._setHandlers(BtnHandler);
@@ -68,20 +72,7 @@ export class NewsCardList extends BaseComponent {
   _hideShowMoreBtn = () => {
     this._button.classList.add('button_is-hidden');
   };
-  showMore = () => {
-    if (this._cardIndexFrom < this._cardsArray.length) { // Проверяем, остались ли еще элементы в массиве для обработки
-      this._cardIndexFrom += 1 // Увеличиваем на 1 индекс элемента, с которого начнется перебор
-      this._cardIndexTo += this._config.loadMoreCount; // Увеличиваем индекс последнего элемента для перебора в массиве на число из настроек
-      this._renderCards();
-    } else {
-      this._hideShowMoreBtn();
-    }
-  };
   addCard = (cardObj) => {
-    this._cardsContainer.appendChild(this._createCard(cardObj, {
-      isUserLoggedIn: this._isLoggedIn,
-      isSaved: false,
-      keyword: this._keyword
-    }));
+    this._cardsContainer.appendChild(this._createCard(cardObj, this._params));
   };
 }

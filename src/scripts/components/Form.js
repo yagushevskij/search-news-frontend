@@ -5,9 +5,8 @@ export class Form extends BaseComponent {
     super()
     this._form = form;
     this._backendErrorEl = backendErrorEl;
-
-    this._setupHandlers()
-    this._setHandlers(this._handlersArray);
+    this._initHandlers();
+    this._setHandlers(this._handlers);
   }
   setServerError = (message) => {
     this._backendErrorEl.textContent = message;
@@ -38,10 +37,10 @@ export class Form extends BaseComponent {
   };
   _clear = () => {
   };
-  _setupHandlers = () => {
-    this._handlersArray = [];
+  _initHandlers = () => {
+    this._handlers = [];
     Array.from(this._form.querySelectorAll('input')).forEach((elem) => {
-      this._handlersArray.push(
+      this._handlers.push(
         {
           element: elem,
           event: 'input',
@@ -49,6 +48,5 @@ export class Form extends BaseComponent {
         }
       )
     });
-    return this._handlersArray;
   };
 }

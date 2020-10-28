@@ -13,11 +13,11 @@ const notFoundTemp = document.querySelector('#not-found');
 const srvErrTemp = document.querySelector('#server-error');
 const cardsBlockTemp = document.querySelector('#cards-block');
 const newsCardTemp = document.querySelector('#news-card');
-const showMoreBtnTemp = document.querySelector('#show-more-button');
+const savedNewsContainer = document.querySelector('.saved-news');
 
 export {
   userButtonElement, popupContainer, loginPopupTemplate, signupPopupTemplate,
   successPopupTemplate, headerContainer, headerMenuLinkTemplate, headerButtonTemplate,
   searchForm, searchResultContainer, isLoadingTemp, notFoundTemp, srvErrTemp, cardsBlockTemp,
-  newsCardTemp, showMoreBtnTemp,
+  newsCardTemp, savedNewsContainer,
 };

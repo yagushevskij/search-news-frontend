@@ -17,7 +17,7 @@ export class Search {
         const keyword = this._input.value;
         const newsObj = await this._getNews(keyword);
         const userData = await this._getUserData();
-        this._newsCardList.renderResults(newsObj.articles, {keyword, userData});
+        this._newsCardList.renderResults(newsObj.articles, {keyword, userData, isSaved: false});
       } catch (err) {
         this._newsCardList.clearContainer();
         this._newsCardList.renderError();

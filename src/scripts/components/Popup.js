@@ -6,11 +6,11 @@ export class Popup extends BaseComponent {
     this._template = template;
     this._container = container;
     this._init = this._init.bind(this);
-    this._setupHandlers = this._setupHandlers.bind(this);
+    this._initHandlers = this._initHandlers.bind(this);
   }
   _init() {
-    this._setupHandlers()
-    this._setHandlers(this._handlersArray);
+    this._initHandlers()
+    this._setHandlers(this._handlers);
   }
   open = () => {
     this._setContent();
@@ -20,8 +20,9 @@ export class Popup extends BaseComponent {
   };
   close = () => {
     this._container.classList.remove('popup_is-opened');
-    // this._removeHandlers(this._handlersArray);
     this._clearContent();
+    console.log(this._handlers)
+    this._removeHandlers(this._handlers);
   }
   _setContent = () => {
     this._view = this._template.content.cloneNode(true).children[0];
@@ -30,8 +31,8 @@ export class Popup extends BaseComponent {
   _clearContent = () => {
     this._view.remove();
   };
-  _setupHandlers() {
-    return this._handlersArray = [{
+  _initHandlers() {
+    return this._handlers = [{
       element: this._view.querySelector('.popup__close'),
       event: 'click',
       callbacks: [this.close]

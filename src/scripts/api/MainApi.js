@@ -57,6 +57,15 @@ export class MainApi {
       .catch((err) => { throw err; })
   };
   getArticles = () => {
+    return fetch(this._articlesApiUrl, {
+      method: 'get',
+      headers: this._headers,
+      credentials: 'include',
+    })
+      .then(res => {
+        return this._checkResponse(res);
+      })
+      .catch((err) => { throw err; })
   };
   createArticle = (dataObj) => {
     return fetch(this._articlesApiUrl, {

@@ -13,7 +13,7 @@ const mainApiConf = {
   },
 };
 const newsApiConf = {
-  apiKey: '5cccd8960b3e402cae29c544e480673f', // API ключ сервиса newsapi.org
+  apiKey: 'e2e59c30fc614dc8815a738af0bea3d3', // API ключ сервиса newsapi.org
   from: 7, // Количество дней назад от текущей даты: начало интервала
   to: 0, // Количество дней назад от текущей даты: конец интервала
   sortBy: 'popularity', // Сортировка
@@ -43,24 +43,41 @@ const headerConf = {
 
 const headerMenuLinks = [
   {
-    title: 'Сохраненные статьи',
-    url: './saved-news.html',
-    page: headerConf.page.savedNews, // используется для идентификации текущей страницы
-    isForLoggedIn: true, // будем показывать этот объект только залогиненным пользователям
-  },
-  {
     title: 'Главная',
     url: './index.html',
     page: headerConf.page.index,
     isForLoggedIn: false,
   },
+  {
+    title: 'Сохраненные статьи',
+    url: './saved-news.html',
+    page: headerConf.page.savedNews, // используется для идентификации текущей страницы
+    isForLoggedIn: true, // будем показывать этот объект только залогиненным пользователям
+  },
 ];
 
 const cardListConf = {
-  cardsOnPage: 3, // Количество карточек при первоначальной загрузке результатов поиска
-  loadMoreCount: 3, // Количество загружаемых карточек по клику на кнопку
+  index: {
+    cardsOnPage: 3, // Количество карточек при первоначальной загрузке результатов поиска
+    loadMoreCount: 3, // Количество загружаемых карточек по клику на кнопку
+  },
+  pageNews: {
+    cardsOnPage: 999,
+    loadMoreCount: 3,
+  },
+};
+
+const cardConf = {
+  index: {
+    page: 'index',
+    picPlacehold: 'http://placehold.it/200x100',
+  },
+  savedNews: {
+    page: 'savedNews',
+    picPlacehold: 'http://placehold.it/200x100',
+  },
 };
 
 export {
-  mainApiConf, newsApiConf, headerConf, headerMenuLinks, cardListConf,
+  mainApiConf, newsApiConf, headerConf, headerMenuLinks, cardListConf, cardConf,
 };

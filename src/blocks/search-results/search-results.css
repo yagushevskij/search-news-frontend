@@ -4,25 +4,10 @@
 @import url('./__not-found-icon/search-results__not-found-icon.css');
 @import url('./_is-visible/search-results_is-visible.css');
 @import url('./__result-wrapper/search-results__result-wrapper.css');
+@import url('./__cardsblock-title/search-results__cardsblock-title.css');
 
 .search-results {
   display: none;
   flex-direction: column;
   background-color: #f5f6f7;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-@media screen and (max-width: 1000px) {
-  .search-results {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .search-results {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
 }

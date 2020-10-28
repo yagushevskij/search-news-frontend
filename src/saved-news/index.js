@@ -1,15 +1,42 @@
 import '../pages/saved-news.css';
-import '../scripts/constants/selectors';
+import {
+  headerMenuLinkTemplate, headerButtonTemplate, headerContainer,
+  searchResultContainer, isLoadingTemp, notFoundTemp, srvErrTemp, cardsBlockTemp,
+  newsCardTemp, savedNewsContainer,
+}
+  from '../scripts/constants/selectors';
+import {
+  mainApiConf, headerConf, headerMenuLinks, cardListConf, cardConf,
+} from '../scripts/constants/config';
 
-const headerIconsContainer = document.querySelector('.header__icons-wrap');
+import { Header } from '../scripts/components/Header';
+import { NewsCard } from '../scripts/components/NewsCard';
+import { NewsCardList } from '../scripts/components/NewsCardList';
+import { SavedNews } from '../scripts/components/SavedNews';
+import { MainApi } from '../scripts/api/MainApi';
 
-const header = document.querySelector('.header');
-const headerMenu = document.querySelector('.header__menu');
-
-headerIconsContainer.addEventListener('click', () => {
-  headerIconsContainer.children.forEach((el) => {
-    el.classList.toggle('header__nav-icon_is-hidden');
-  });
-  header.classList.toggle('header_style_fill');
-  headerMenu.classList.toggle('header__menu_mobile');
-});
+(() => {
+  'use strict';
+  const mainApi = new MainApi(mainApiConf);
+  const getUserData = () => mainApi.getUserData();
+  const getSavedNews = () => mainApi.getArticles();
+  const header = new Header(headerContainer, getUserData,
+    {
+      style: headerConf.style.white,
+      page: headerConf.page.savedNews,
+      menuLinks: headerMenuLinks,
+      menuLinkTemplate: headerMenuLinkTemplate,
+      menuButtonTemplate: headerButtonTemplate,
+    });
+  const createNewsCard = (...args) => new NewsCard(newsCardTemp, mainApi,
+    cardConf.savedNews).create(...args);
+  const newsCardList = new NewsCardList(searchResultContainer, createNewsCard,
+    {
+      isLoadingTemp, notFoundTemp, srvErrTemp, cardsBlockTemp,
+    },
+    cardListConf.pageNews);
+  const logout = () => mainApi.logout();
+  header.setDependencies({ logout });
+  const savedNews = new SavedNews(savedNewsContainer, newsCardList, getSavedNews, getUserData);
+  savedNews.renderResults();
+})();

@@ -1,0 +1,15 @@
+.search-results__cardsblock-title {
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 1000px) {
+  .search-results__cardsblock-title {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .search-results__cardsblock-title {
+    margin-top: 32px;
+  }
+}
