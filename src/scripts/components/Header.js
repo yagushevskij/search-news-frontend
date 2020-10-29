@@ -3,13 +3,11 @@ import { BaseComponent } from './BaseComponent';
 export class Header extends BaseComponent {
   constructor(domElement, getUserData, config = {}) {
     super(domElement);
-
     this._mobileIconsContainer = this._domElement.querySelector('.header__icons-wrap');
     this._menu = this._domElement.querySelector('.header__menu');
-
-    this._styleModificator = config.style.modificator;
-    this._page = config.page;
+    this._pageName = config.page.name;
     this._menuLinks = config.menuLinks;
+    this._text = config.text;
     this._menuLinkTemplate = config.menuLinkTemplate;
     this._menuButtonTemplate = config.menuButtonTemplate;
     this._getUserData = getUserData;
@@ -32,9 +30,9 @@ export class Header extends BaseComponent {
     this._logout = dependencies.logout;
   };
   _hideUserPages = () => {
-    if (this._page === 'savedNews' && !this._userName) { // Если неавторизованный пользователь пробует загрузить страницу
+    if (this._pageName === 'savedNews' && !this._userName) { // Если неавторизованный пользователь пробует загрузить страницу
       // сохраненных новостей, то редирректим его на главную.
-      document.location.href='./index.html';
+      document.location.href = './index.html';
     }
   };
   render = (options = {}) => {
@@ -44,7 +42,11 @@ export class Header extends BaseComponent {
     this._clearContent();
     this._setMenuLinks();
     this._setLoginButton();
-    this._domElement.classList.add(this._styleModificator);
+    if (this._pageName === 'index') {
+      this._domElement.classList.add('header_style_background-image');
+    } else if (this._pageName === 'savedNews') {
+      this._domElement.classList.add('header_style_background-none');
+    }
     this._initHandlers();
     this._setHandlers(this._handlers);
   };
@@ -64,7 +66,7 @@ export class Header extends BaseComponent {
       textElement.textContent = this._userName;
       icon.classList.add('header__logout-icon_is-visible')
     } else {
-      textElement.textContent = 'Авторизоваться';
+      textElement.textContent = this._text.authButton;
     }
     this._menu.append(button);
     this._authButton = this._domElement.querySelector('.header__menu-link_type_button');
@@ -75,7 +77,7 @@ export class Header extends BaseComponent {
         const element = this._menuLinkTemplate.content.cloneNode(true).children[0];
         element.children[0].textContent = data.title;
         element.children[0].setAttribute('href', data.url);
-        if (data.page && (data.page === this._page)) {
+        if (data.page && (data.page === this._pageName)) {
           element.children[0].classList.add('header__menu-link_active');
         } else {
           element.children[0].classList.add('header__menu-link_inactive');
@@ -96,8 +98,8 @@ export class Header extends BaseComponent {
   }
   _signout = () => {
     this._logout()
-    .then(() => window.location.reload())
-    .catch((err) => console.log(err));
+      .then(() => window.location.reload())
+      .catch((err) => console.log(err));
   };
   _initHandlers = () => {
     if (this._isLoggedIn) {

@@ -8,7 +8,8 @@ export class NewsCard extends BaseComponent {
     this._saveArticle = mainApi.createArticle;
     this._removeArticle = mainApi.removeArticle;
     this._picPlacehold = config.picPlacehold;
-    this._page = config.page; // Получаем название страницы для создания логики удаления карточек.
+    this._pageName = config.page; // Получаем название страницы для создания логики удаления карточек.
+    this._text = config.text;
   }
   create = (cardObj, params = {}) => {
     this._cardObj = cardObj;
@@ -57,11 +58,11 @@ export class NewsCard extends BaseComponent {
     this._icon = this._iconsContainer.querySelector('.card__icon');
     const messageContainer = this._iconsContainer.querySelector('.card__icon_type_message');
     if (this._isUserLoggedIn && !this._isSaved) {
-      messageContainer.textContent = 'Добавить в сохраненные'
+      messageContainer.textContent = this._text.addToSaved;
       this._icon.classList.remove('card__icon_type_saved');
     }
     if (this._isSaved) {
-      messageContainer.textContent = 'Убрать из сохраненных'
+      messageContainer.textContent = this._text.removeFromSaved;
       this._icon.classList.add('card__icon_type_saved');
     }
   };
@@ -82,10 +83,10 @@ export class NewsCard extends BaseComponent {
       this._removeArticle(this._cardObj._id)
         .then((res) => {
           this._isSaved = false;
-          if (this._page === 'index') {
+          if (this._pageName === 'index') {
             this.renderIcon();
             this._initHandlers();
-          } else if (this._page === 'savedNews') {
+          } else if (this._pageName === 'savedNews') {
             this._view.remove();
             this._refreshInfoBlock(this._cardObj);
           } else {

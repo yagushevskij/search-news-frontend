@@ -14,11 +14,13 @@ export class SigninPopup extends Popup {
   _init() {
     super._init();
     this._formElem = this._view.querySelector('form');
+    this._submitButton = this._formElem.querySelector('.button');
     const backendErrorEl = this._formElem.querySelector('.popup__backend-error-message');
     this._form = this._createForm(this._formElem, backendErrorEl);
   };
   _signin = (evt) => {
     evt.preventDefault();
+    this._disableButton();
     return this._login(getInputsObj(this._formElem))
       .then((data) => {
         this._renderHeader({ isLoggedIn: true, userName: data.username })
@@ -26,8 +28,15 @@ export class SigninPopup extends Popup {
       })
       .catch((err) => {
         this._form.setServerError(err.message)
+        this._enableButton();
       });
   };
+  _disableButton = () => {
+    this._submitButton.setAttribute('disabled', 'true');
+  }
+  _enableButton = () => {
+    this._submitButton.removeAttribute('disabled');
+  }
   _initHandlers() {
     super._initHandlers();
     this._handlers.push({

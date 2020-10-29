@@ -6,9 +6,7 @@ import {
   newsCardTemp,
 }
   from './scripts/constants/selectors';
-import {
-  mainApiConf, newsApiConf, headerConf, headerMenuLinks, cardListConf, cardConf,
-} from './scripts/constants/config';
+import { config } from './scripts/constants/config';
 
 import { SigninPopup } from './scripts/components/SigninPopup';
 import { SignupPopup } from './scripts/components/SignupPopup';
@@ -23,27 +21,29 @@ import { NewsApi } from './scripts/api/NewsApi';
 
 (() => {
   'use strict';
-  const mainApi = new MainApi(mainApiConf);
-  const newsApi = new NewsApi(newsApiConf);
+  const mainApi = new MainApi(config.mainApi);
+  const newsApi = new NewsApi(config.newsApi);
   const getUserData = () => mainApi.getUserData();
   const header = new Header(headerContainer, getUserData,
     {
-      style: headerConf.style.image,
-      page: headerConf.page.index,
-      menuLinks: headerMenuLinks,
+      page: config.header.pages.index,
+      menuLinks: config.header.menuLinks,
+      text: config.header.text,
       menuLinkTemplate: headerMenuLinkTemplate,
       menuButtonTemplate: headerButtonTemplate,
     });
   const createNewsCard = (...args) => new NewsCard(newsCardTemp, mainApi,
-    cardConf.index).create(...args);
+    config.card.pages.index).create(...args);
   const newsCardList = new NewsCardList(searchResultContainer, createNewsCard,
     {
       isLoadingTemp, notFoundTemp, srvErrTemp, cardsBlockTemp,
     },
-    cardListConf.index);
-  const search = new Search(searchForm, newsCardList, newsApi.getNews, getUserData);
+    config.cardList.pages.index);
+  const search = new Search(searchForm, newsCardList, newsApi.getNews, getUserData, config.search);
 
-  const createForm = (form, backendErrorEl, ...args) => new Form(form, backendErrorEl, ...args);
+  const createForm = (form, backendErrorEl, ...args) => new Form(
+    form, backendErrorEl, config.form, ...args,
+  );
 
   const signinPopup = new SigninPopup(loginPopupTemplate, popupContainer, mainApi.login, createForm,
     header.render);

@@ -22,4 +22,6 @@ const getInputsObj = (form) => {
   return result;
 };
 
-export { getPrevDate, getInputsObj, getFormatedDate };
+export {
+  getPrevDate, getInputsObj, getFormatedDate,
+};

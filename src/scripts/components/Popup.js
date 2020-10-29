@@ -21,8 +21,6 @@ export class Popup extends BaseComponent {
   close = () => {
     this._container.classList.remove('popup_is-opened');
     this._clearContent();
-    console.log(this._handlers)
-    this._removeHandlers(this._handlers);
   }
   _setContent = () => {
     this._view = this._template.content.cloneNode(true).children[0];
