@@ -11,6 +11,7 @@ export class SavedNews {
     this._getUserData = getUserData;
   }
   renderResults = async () => {
+    this._newsCardList.renderLoader();
     this._userData = await this._getUserData();
     this._userName = this._userData.username
     this._newsArray = await this._getSavedNews();
