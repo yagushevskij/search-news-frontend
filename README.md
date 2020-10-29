@@ -1,7 +1,10 @@
 # Фронтенд [сервиса поиска новостей](https://yagushevskij.github.io/serch-news-frontend/) v1.0.0
 
 ## Описание проекта
-Учебная дипломная работа [яндекс.практикум](https://praktikum.yandex.ru/) фронтенд разработки сайта по поиску новостей, выполненной по [макету](https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1528)
+Учебная дипломная работа [яндекс.практикум](https://praktikum.yandex.ru/) по разработке фронтенда сервиса поиска новостей, выполненная по [макету](https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1528) и работающая с двумя API:
+1) [Backend](https://github.com/yagushevskij/search-news-api) приложения;
+2) [newsapi.org](https://newsapi.org);
+Пример работы приложения: [news.turbomegapro.ru](https://news.turbomegapro.ru/)
 
 ## Особенности проекта
 - Современная адаптивная вёрстка, выполненная по технологии Flex layout и Grid Layout. 
@@ -14,6 +17,3 @@
 
 ## Используемые технологии:
 html, css, JavaScript, webpack
-
-### Примечание
-Страница [сохраненных новостей](https://yagushevskij.github.io/serch-news-frontend/saved-news.html) gh-pages.
