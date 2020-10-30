@@ -31,10 +31,14 @@ export class NewsCardList extends BaseComponent {
       this._hideShowMoreBtn();
     }
   };
-  renderResults = (cardsArray, params = {}) => {
+  renderResults = (cardsArray, params = {}) => { // Вызывается со всеми аргументами для отрисовки карточек,
+    // либо только с частью - для перерисовки текущих результатов (например при логине/раздлгине).
     this.clearContainer();
-    this._cardsArray = cardsArray;
-    this._params = params;
+    this._cardsArray = this._cardsArray || cardsArray; // Если при вызове метода массив карточек пришел, то будем работать с ним
+    this._params = this._params || params;
+    if (params.userData) { // Проверям, пришли ли данные об авторизованном пользователе
+      this._params.userData = params.userData;
+    }
     if (this._cardsArray.length > 0) {
       this.renderInfoBlock(this._cardsBlockTemp);
       this._button = this._container.querySelector('.button_type_load-more');

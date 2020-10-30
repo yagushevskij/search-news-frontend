@@ -2,11 +2,12 @@ import { Popup } from './Popup';
 import { getInputsObj } from '../utils';
 
 export class SigninPopup extends Popup {
-  constructor(template, container, login, createForm, renderHeader) {
+  constructor(template, container, login, createForm, renderHeader, renderCardlist) {
     super(template, container);
     this._login = login;
     this._createForm = createForm;
     this._renderHeader = renderHeader;
+    this._renderCardList = renderCardlist;
   }
   setDependencies = (dependencies = {}) => {
     this._signupPopup = dependencies.signupPopup;
@@ -24,6 +25,7 @@ export class SigninPopup extends Popup {
     return this._login(getInputsObj(this._formElem))
       .then((data) => {
         this._renderHeader({ isLoggedIn: true, userName: data.username })
+        this._renderCardList(null, {userData: data});
         this.close();
       })
       .catch((err) => {
