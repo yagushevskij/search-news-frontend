@@ -2,12 +2,12 @@ import { Popup } from './Popup';
 import { getInputsObj } from '../utils';
 
 export class SigninPopup extends Popup {
-  constructor(template, container, login, createForm, renderHeader, renderCardlist) {
+  constructor(template, container, login, createForm, renderHeader, cardlist) {
     super(template, container);
     this._login = login;
     this._createForm = createForm;
     this._renderHeader = renderHeader;
-    this._renderCardList = renderCardlist;
+    this._cardList = cardlist;
   }
   setDependencies = (dependencies = {}) => {
     this._signupPopup = dependencies.signupPopup;
@@ -25,7 +25,9 @@ export class SigninPopup extends Popup {
     return this._login(getInputsObj(this._formElem))
       .then((data) => {
         this._renderHeader({ isLoggedIn: true, userName: data.username })
-        this._renderCardList(null, {userData: data});
+        if (this._cardList.cardsArray) { // Проверяем есть ли в объекте массив с карточками
+          this._cardList.renderResults(null, {userData: data});
+        };
         this.close();
       })
       .catch((err) => {

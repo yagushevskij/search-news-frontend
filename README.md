@@ -1,4 +1,4 @@
-# Фронтенд [сервиса поиска новостей](https://yagushevskij.github.io/serch-news-frontend/) v1.0.0
+# Фронтенд [сервиса поиска новостей](https://www.turbomegapro.ru/) v1.0.0
 
 ## Описание проекта
 Учебная дипломная работа [яндекс.практикум](https://praktikum.yandex.ru/) по разработке фронтенда сервиса поиска новостей, выполненная по [макету](https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1528) и работающая с двумя API:

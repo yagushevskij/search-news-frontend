@@ -20,33 +20,33 @@ export class NewsCardList extends BaseComponent {
   };
   _renderCards = () => {
     for (let i = this._cardIndexFrom; i <= this._cardIndexTo; i++) {
-      if (i < this._cardsArray.length) {
-        this.addCard(this._cardsArray[i])
+      if (i < this.cardsArray.length) {
+        this.addCard(this.cardsArray[i])
         this._cardIndexFrom = i; // Записываем индекс последнего элемента в цикле
       }
     }
     this._cardIndexFrom += 1 // Увеличиваем на 1 индекс элемента, с которого начнется перебор
     this._cardIndexTo += this._config.loadMoreCount; // Увеличиваем индекс последнего элемента для перебора в массиве на число из настроек
-    if (this._cardIndexFrom >= this._cardsArray.length) {
+    if (this._cardIndexFrom >= this.cardsArray.length) {
       this._hideShowMoreBtn();
     }
   };
   renderResults = (cardsArray, params = {}) => { // Вызывается со всеми аргументами для отрисовки карточек,
     // либо только с частью - для перерисовки текущих результатов (например при логине/раздлгине).
     this.clearContainer();
-    this._cardsArray = this._cardsArray || cardsArray; // Если при вызове метода массив карточек пришел, то будем работать с ним
+    this.cardsArray = this.cardsArray || cardsArray; // Если при вызове метода массив карточек пришел, то будем работать с ним
     this._params = this._params || params;
     if (params.userData) { // Проверям, пришли ли данные об авторизованном пользователе
       this._params.userData = params.userData;
     }
-    if (this._cardsArray.length > 0) {
+    if (this.cardsArray.length > 0) {
       this.renderInfoBlock(this._cardsBlockTemp);
       this._button = this._container.querySelector('.button_type_load-more');
       this._cardsContainer = this._container.querySelector('.cards-container');
       this._cardIndexFrom = 0; // Создаем переменную с дефолтным индексом, с которого начнется перебор массива.
       this._cardIndexTo = this._config.cardsOnPage - 1;
       this._renderCards();
-      if (this._cardIndexFrom < this._cardsArray.length) { // Если длинна массива больше, чем последний добавленный в DOM элемент, то покажем кнопку show-more и навесим обработчки
+      if (this._cardIndexFrom < this.cardsArray.length) { // Если длинна массива больше, чем последний добавленный в DOM элемент, то покажем кнопку show-more и навесим обработчки
         this._showShowMoreBtn();
       }
     } else {

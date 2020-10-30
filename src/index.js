@@ -46,7 +46,7 @@ import { NewsApi } from './scripts/api/NewsApi';
   );
 
   const signinPopup = new SigninPopup(loginPopupTemplate, popupContainer, mainApi.login, createForm,
-    header.render, newsCardList.renderResults);
+    header.render, newsCardList);
   const signupPopup = new SignupPopup(signupPopupTemplate, popupContainer, mainApi.register,
     createForm);
   const informPopup = new InformPopup(successPopupTemplate, popupContainer);
