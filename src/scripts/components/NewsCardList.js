@@ -31,14 +31,12 @@ export class NewsCardList extends BaseComponent {
       this._hideShowMoreBtn();
     }
   };
-  renderResults = (cardsArray, params = {}) => { // Вызывается со всеми аргументами для отрисовки карточек,
-    // либо только с частью - для перерисовки текущих результатов (например при логине/раздлгине).
+  renderResults = (cardsArray, params) => { // Вызывается со всеми аргументами для отрисовки карточек,
+    // либо без из метода refreshResults - для перерисовки текущих результатов (например при логине/раздлгине).
     this.clearContainer();
-    this.cardsArray = this.cardsArray || cardsArray; // Если при вызове метода массив карточек пришел, то будем работать с ним
-    this._params = this._params || params;
-    if (params.userData) { // Проверям, пришли ли данные об авторизованном пользователе
-      this._params.userData = params.userData;
-    }
+    this.cardsArray = cardsArray || this.cardsArray; // Если при вызове метода массив карточек пришел, то будем работать с ним; либо с тем, что уже есть.
+    this._params = params || this._params;
+    console.log(this._params, this.cardsArray)
     if (this.cardsArray.length > 0) {
       this.renderInfoBlock(this._cardsBlockTemp);
       this._button = this._container.querySelector('.button_type_load-more');
@@ -52,6 +50,12 @@ export class NewsCardList extends BaseComponent {
     } else {
       this.renderInfoBlock(this._notFoundTemp);
     };
+  };
+  refreshResults = (params = {}) => { // Метод для перерисовывания картчек из уже существующего массива.
+    if (params.userData) { // Проверям, пришли ли данные об авторизованном пользователе
+      this._params.userData = params.userData;
+      this.renderResults();
+    }
   };
   renderLoader = () => {
     this.renderInfoBlock(this._isLoadingTemp);

@@ -26,7 +26,7 @@ export class SigninPopup extends Popup {
       .then((data) => {
         this._renderHeader({ isLoggedIn: true, userName: data.username })
         if (this._cardList.cardsArray) { // Проверяем есть ли в объекте массив с карточками.
-          this._cardList.renderResults(null, {userData: data}); // Перерисовываем карточки для возможности сохранения.
+          this._cardList.refreshResults({userData: data}); // Перерисовываем карточки для возможности сохранения.
         };
         this.close();
       })
