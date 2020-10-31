@@ -34,7 +34,7 @@ const config = {
     menuLinks: [
       {
         title: 'Главная',
-        url: './index.html',
+        url: './',
         page: 'index',
         isForLoggedIn: false,
       },

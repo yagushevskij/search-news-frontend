@@ -32,7 +32,7 @@ export class Header extends BaseComponent {
   _hideUserPages = () => {
     if (this._pageName === 'savedNews' && !this._userName) { // Если неавторизованный пользователь пробует загрузить страницу
       // сохраненных новостей, то редирректим его на главную.
-      document.location.href = './index.html';
+      document.location.href = './';
     }
   };
   render = (options = {}) => {
