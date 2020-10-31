@@ -36,7 +36,6 @@ export class NewsCardList extends BaseComponent {
     this.clearContainer();
     this.cardsArray = cardsArray || this.cardsArray; // Если при вызове метода массив карточек пришел, то будем работать с ним; либо с тем, что уже есть.
     this._params = params || this._params;
-    console.log(this._params, this.cardsArray)
     if (this.cardsArray.length > 0) {
       this.renderInfoBlock(this._cardsBlockTemp);
       this._button = this._container.querySelector('.button_type_load-more');
