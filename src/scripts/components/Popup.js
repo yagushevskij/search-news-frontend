@@ -22,6 +22,16 @@ export class Popup extends BaseComponent {
     this._container.classList.remove('popup_is-opened');
     this._clearContent();
   }
+  _closeByEsc = (evt) => {
+    if (evt.keyCode === 27) {
+      this.close();
+    }
+  };
+  _closeByOverlay = (evt) => {
+    if (evt.target === this._container) {
+      this.close();
+    }
+  };
   _setContent = () => {
     this._view = this._template.content.cloneNode(true).children[0];
     this._container.append(this._view);
@@ -34,6 +44,16 @@ export class Popup extends BaseComponent {
       element: this._view.querySelector('.popup__close'),
       event: 'click',
       callbacks: [this.close]
+    },
+    {
+      element: this._container,
+      event: 'click',
+      callbacks: [this._closeByOverlay]
+    },
+    {
+      element: document,
+      event: 'keydown',
+      callbacks: [this._closeByEsc]
     }];
   };
 }
