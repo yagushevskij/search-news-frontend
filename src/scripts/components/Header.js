@@ -42,11 +42,6 @@ export class Header extends BaseComponent {
     this._clearContent();
     this._setMenuLinks();
     this._setLoginButton();
-    if (this._pageName === 'index') {
-      this._domElement.classList.add('header_style_background-image');
-    } else if (this._pageName === 'savedNews') {
-      this._domElement.classList.add('header_style_background-none');
-    }
     this._initHandlers();
     this._setHandlers(this._handlers);
   };
