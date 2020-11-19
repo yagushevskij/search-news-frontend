@@ -1,6 +1,6 @@
 import { getPrevDate } from '../utils';
 
-const MAIN_API_URL = NODE_ENV === 'production' ? 'https://api.turbomegapro.ru' : 'http://localhost:3000';
+const MAIN_API_URL = NODE_ENV === 'production' ? 'https://news-explorer-api.turbomegapro.ru' : 'http://localhost:3000';
 const NEWS_API_URL = NODE_ENV === 'production' ? 'https://nomoreparties.co/news/v2/everything?' : 'https://newsapi.org/v2/everything?';
 
 const config = {
