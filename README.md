@@ -1,11 +1,12 @@
 # Фронтенд [сервиса поиска новостей](https://news-explorer.turbomegapro.ru/) v1.0.0
 
 ## Описание проекта
-Учебная дипломная работа [яндекс.практикум](https://praktikum.yandex.ru/) по разработке фронтенда сервиса поиска новостей, выполненная по [макету](https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1528) и работающая с двумя API:
-1. [Backend](https://github.com/yagushevskij/search-news-api) приложения;
-2. [newsapi.org](https://newsapi.org);
+Учебная дипломная работа [яндекс.практикум](https://praktikum.yandex.ru/) по разработке фронтенда сервиса поиска новостей. Приложение работает с двумя API:
+1. Локальный [Backend](https://github.com/yagushevskij/search-news-api) приложения;
+2. Внешний [newsapi.org](https://newsapi.org);
 
-Пример работы приложения: [https://news-explorer.turbomegapro.ru/](https://news-explorer.turbomegapro.ru/)
+![alt tag](https://i.imgur.com/J0OtoRA.jpg "Скриншот главной страницы приложения")​
+Демо: [https://news-explorer.turbomegapro.ru/](https://news-explorer.turbomegapro.ru/)
 
 ## Особенности проекта
 - Современная адаптивная вёрстка, выполненная по технологии Flex layout и Grid Layout. 
